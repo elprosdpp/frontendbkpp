@@ -1,5 +1,8 @@
 <template>
-  <h1>Struktur BKPP</h1>
+  <img
+    src="https://i.pinimg.com/originals/d1/5e/bd/d15ebd46ece7b9cb9a1e22710bfc3847.png"
+    alt="Struktur BKPP"
+  />
 </template>
 
 <script>

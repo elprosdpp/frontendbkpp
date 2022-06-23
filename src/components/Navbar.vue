@@ -40,6 +40,7 @@
           </router-link>
           <router-link
             to="/profil/struktur"
+            class-active="active"
             class="hidden md:block lg:block px-3 text-link hover:text-hover font-semibold"
           >
             PROFIL
@@ -595,17 +596,7 @@
 </template>
 
 <script>
-export default {
-  methods: {
-    subIsActive(path) {
-      return this.$route.path === path;
-    },
-    // for main routes
-    IsActive(path) {
-      return this.$route.path.startsWith(path);
-    },
-  },
-};
+export default {};
 </script>
 
 <style>
