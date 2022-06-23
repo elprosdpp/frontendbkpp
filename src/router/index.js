@@ -1,7 +1,11 @@
-import { useRouter, useRoute, createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import ProfilView from '../views/ProfilView.vue'
-import TupoksiView from '../views/TupoksiView.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue';
+import ProfilView from '../views/ProfilView.vue';
+
+
+import Wrapper from '@/components/profil/WrapProfil.vue';
+import TupoksiView from '@/components/profil/TupoksiBidang.vue';
+import StrukBkpp from '@/components/profil/StrukturBkpp.vue';
 
 
 const routes = [
@@ -14,12 +18,16 @@ const routes = [
 
   {
     path: '/profil',
-    name: 'profil',
-    component: ProfilView,
-    meta: { title: 'Profil - BKPPUNW' },
+    component: Wrapper,
     children: [
       {
-        path: 'tupoksi-bidang',
+        path: 'struktur',
+        name: "struktur",
+        meta: { title: 'Struktur BKAPP - BKPPUNW' },
+        component: StrukBkpp
+      },
+      {
+        path: 'tupoksi',
         name: "tupoksi-bidang",
         meta: { title: 'Tupoksi Bidang - BKPPUNW' },
         component: TupoksiView

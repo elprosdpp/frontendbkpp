@@ -5,7 +5,7 @@
   font-family: "Sora", "Poppins", sans-serif;
 }
 
-.router-link-exact-active {
-  font: semi-bold;
+.router-link-exact-active.router-link-active {
+  font-weight: 600;
   color: black;
 }

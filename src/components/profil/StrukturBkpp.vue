@@ -1,5 +1,5 @@
 <template>
-  <h1>Tupoksi Bidang</h1>
+  <h1>Struktur BKPP</h1>
 </template>
 
 <script>

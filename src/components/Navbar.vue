@@ -39,7 +39,7 @@
             BERANDA
           </router-link>
           <router-link
-            to="/profil"
+            to="/profil/struktur"
             class="hidden md:block lg:block px-3 text-link hover:text-hover font-semibold"
           >
             PROFIL
@@ -593,6 +593,20 @@
   </div>
   <!-- End Nav Content -->
 </template>
+
+<script>
+export default {
+  methods: {
+    subIsActive(path) {
+      return this.$route.path === path;
+    },
+    // for main routes
+    IsActive(path) {
+      return this.$route.path.startsWith(path);
+    },
+  },
+};
+</script>
 
 <style>
 /* #Mega Menu Styles
