@@ -7,13 +7,12 @@
       <!-- End Sidebar -->
 
       <!-- Content -->
-      <div class="w-full p-3 h-auto mx-5 border-2 border-rBlue rounded-lg">
+      <div class="w-1/2 p-3 h-auto mx-5 border-2 border-rBlue rounded-lg">
         <img
           src="https://i.pinimg.com/originals/d1/5e/bd/d15ebd46ece7b9cb9a1e22710bfc3847.png"
           alt="Struktur BKPP"
         />
       </div>
-      <TupoksiBidang />
       <!-- End Content -->
     </div>
   </div>
@@ -41,6 +40,15 @@ export default {
         },
       ],
     };
+  },
+
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to, from) {
+        document.title = to.meta.title || "BKPP UNW";
+      },
+    },
   },
 };
 </script>
