@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { useRouter, useRoute, createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfilView from '../views/ProfilView.vue'
 import TupoksiView from '../views/TupoksiView.vue'
@@ -13,7 +13,7 @@ const routes = [
 
   {
     path: '/profil',
-    name: 'Profil',
+    name: 'profil',
     component: ProfilView,
     children: [
       {

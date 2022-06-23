@@ -30,7 +30,7 @@ export default {
         {
           id: "1",
           name: "Struktur BKPP",
-          link: "",
+          link: "profil",
           icon: "fa-solid fa-arrows-down-to-people",
         },
         {
