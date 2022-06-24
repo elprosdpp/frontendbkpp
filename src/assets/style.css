@@ -10,11 +10,11 @@
   color: black;
 } */
 .active {
-  color: black;
+  color: #344ba0;
   font-weight: bold;
 }
 
 .exact-active-link {
-  color: black;
+  color: #344ba0;
   font-weight: bold;
 }

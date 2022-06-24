@@ -1,5 +1,8 @@
 <template>
-  <h1>Tupoksi Bidang</h1>
+  <img
+    src="https://ppid.ntbprov.go.id/img/TugasFungsiPPIDNTB.jpeg"
+    alt="Tupoksi Bidang"
+  />
 </template>
 
 <script>

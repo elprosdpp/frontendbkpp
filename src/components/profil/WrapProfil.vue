@@ -1,12 +1,18 @@
 <template>
   <div class="container mx-auto py-20">
-    <div class="flex flex-wrap lg:flex-nowrap justify-center py-3 px-[2.5rem]">
+    <div class="flex flex-wrap lg:flex-nowrap justify-center py-3 px-[1.5rem]">
       <!-- Sidebar -->
-      <Sidebar :items="dataItem" header="Profil" class="w-96" />
+      <Sidebar
+        :items="dataItem"
+        header="Profil"
+        :width="['w-96 mb-5 md:w-10/12 lg:w-1/3']"
+      />
       <!-- End Sidebar -->
 
       <!-- Content -->
-      <div class="w-[75%] p-3 h-auto mx-5 border-2 border-rBlue rounded-lg">
+      <div
+        class="w-96 p-3 h-auto border-2 border-rBlue rounded-lg md:w-10/12 lg:w-10/11 lg:mx-5"
+      >
         <router-view></router-view>
       </div>
       <!-- End Content -->
@@ -15,7 +21,7 @@
 </template>
 
 <script>
-import Sidebar from "@/components/profil/Sidebar.vue";
+import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   components: { Sidebar },
