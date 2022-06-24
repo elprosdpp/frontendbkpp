@@ -13,7 +13,7 @@
         <h1 class="text-sm lg:text-5xl font-bold">{{ i.title }}</h1>
         <p class="text-sm lg:text-xl mb-1 lg:mb-3">{{ i.caption }}</p>
         <router-link
-          to="/about"
+          to="/profil"
           class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Read more

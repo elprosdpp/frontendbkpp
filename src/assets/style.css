@@ -5,11 +5,16 @@
   font-family: "Sora", "Poppins", sans-serif;
 }
 
-.exact-active-link.active-link {
+/* .exact-active-link.active-link {
   font-weight: 600;
   color: black;
-}
+} */
 .active {
-  font-weight: 600;
   color: black;
+  font-weight: bold;
+}
+
+.exact-active-link {
+  color: black;
+  font-weight: bold;
 }

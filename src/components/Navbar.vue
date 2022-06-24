@@ -39,8 +39,8 @@
             BERANDA
           </router-link>
           <router-link
-            to="/profil/struktur"
-            class-active="active"
+            to="/profil"
+            :class="{ 'router-link-active': subIsActive('/profil') }"
             class="hidden md:block lg:block px-3 text-link hover:text-hover font-semibold"
           >
             PROFIL
@@ -596,10 +596,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    subIsActive(input) {
+      const paths = Array.isArray(input) ? input : [input];
+      return paths.some((path) => {
+        return this.$route.path.indexOf(path) === 0; // current path starts with this path string
+      });
+    },
+  },
+};
 </script>
 
 <style>
+.active {
+  font-weight: 600;
+  color: black;
+}
 /* #Mega Menu Styles
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .mega-menu {

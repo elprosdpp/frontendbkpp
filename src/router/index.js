@@ -18,6 +18,9 @@ const routes = [
 
   {
     path: '/profil',
+    redirect: {
+      path: '/profil/struktur'
+    },
     component: Wrapper,
     children: [
       {
@@ -40,8 +43,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  linkActiveClass: 'active-link',
-  linkExactActiveClass: 'exact-active-link',
+  linkActiveClass: 'active',
 })
 
 

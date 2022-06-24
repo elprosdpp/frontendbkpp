@@ -1,1 +1,0 @@
-@/components/profil/Sidebar.vue
