@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import PanelHeader from "../Panel.vue";
-import Sidebar from "../Sidebar.vue";
+import PanelHeader from "@/components/Panel.vue";
+import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   components: { Sidebar, PanelHeader },
@@ -43,7 +43,6 @@ export default {
           icon: "fa-solid fa-book-open",
         },
       ],
-      style: [{}],
     };
   },
 

@@ -12,7 +12,7 @@
       >
         <h1 class="text-sm lg:text-5xl font-bold">{{ i.title }}</h1>
         <p class="text-sm lg:text-xl mb-1 lg:mb-3">{{ i.caption }}</p>
-        <router-link
+        <!-- <router-link
           to="/profil"
           class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
@@ -29,7 +29,7 @@
               clip-rule="evenodd"
             ></path>
           </svg>
-        </router-link>
+        </router-link> -->
       </div>
       <img :src="i.img" class="h-96 object-cover lg:h-auto lg:object-contain" />
     </swiper-slide>
@@ -54,32 +54,9 @@ export default {
     SwiperSlide,
   },
 
-  // Looping data Slider
-  data() {
-    return {
-      images: [
-        {
-          id: "1",
-          img: "https://via.placeholder.com/1920x700",
-          title: "Slide 1",
-          caption: "ini adalah slide 1",
-        },
-        {
-          id: "2",
-          img: "https://via.placeholder.com/1920x700",
-          title: "Slide 2",
-          caption: "ini adalah slide 2",
-        },
-        {
-          id: "3",
-          img: "https://via.placeholder.com/1920x700",
-          title: "Slide 3",
-          caption: "ini adalah slide 3",
-        },
-      ],
-    };
+  props: {
+    images: Object,
   },
-  // End Looping data Slider
 
   setup() {
     return {

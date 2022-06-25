@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
+// Langsung Panggil Home View
 import HomeView from '../views/HomeView.vue';
-import ProfilView from '../views/ProfilView.vue';
 
+// Routes Group Profil
+import Profil from '../views/profil/WrapProfilView.vue';
+import Struktur from '../views/profil/StrukturView.vue';
+import Tupoksi from '../views/profil/TupoksiView.vue';
 
-import Wrapper from '@/components/profil/WrapProfil.vue';
-import TupoksiView from '@/components/profil/TupoksiBidang.vue';
-import StrukBkpp from '@/components/profil/StrukturBkpp.vue';
 
 
 const routes = [
@@ -21,19 +23,19 @@ const routes = [
     redirect: {
       path: '/profil/struktur'
     },
-    component: Wrapper,
+    component: Profil,
     children: [
       {
         path: 'struktur',
         name: "struktur",
         meta: { title: 'Struktur BKAPP - BKPPUNW' },
-        component: StrukBkpp
+        component: Struktur
       },
       {
         path: 'tupoksi',
         name: "tupoksi-bidang",
         meta: { title: 'Tupoksi Bidang - BKPPUNW' },
-        component: TupoksiView
+        component: Tupoksi
       }
     ]
   },
