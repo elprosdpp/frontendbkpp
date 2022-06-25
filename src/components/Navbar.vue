@@ -67,7 +67,7 @@
                 <!-- Head Megamenu -->
                 <div class="flex flex-wrap justify-between items-center">
                   <div class="left">
-                    <h2 class="font-bold text-sm">WEB BAGIAN BKAPP UNW</h2>
+                    <h2 class="font-bold text-sm">LINK BAGIAN BKAPP UNW</h2>
                     <p class="text-1xs">All Menu</p>
                   </div>
                   <!-- Search Form -->

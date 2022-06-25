@@ -1,11 +1,12 @@
 <template>
+  <PanelHeader judul="Profil" caption="Memuat Struktur Organisasi & Tupoksi Bidang" />
   <div class="container mx-auto py-20">
-    <div class="flex flex-wrap lg:flex-nowrap justify-center py-3 px-[1.5rem]">
+    <div class="flex flex-wrap lg:flex-nowrap justify-center px-[1.5rem]">
       <!-- Sidebar -->
       <Sidebar
         :items="dataItem"
         header="Profil"
-        :width="['w-96 mb-5 md:w-10/12 lg:w-1/3']"
+        :width="['Sidebar', 'w-96 mb-5 md:w-10/12 lg:w-1/3']"
       />
       <!-- End Sidebar -->
 
@@ -21,10 +22,11 @@
 </template>
 
 <script>
-import Sidebar from "@/components/Sidebar.vue";
+import PanelHeader from "../Panel.vue";
+import Sidebar from "../Sidebar.vue";
 
 export default {
-  components: { Sidebar },
+  components: { Sidebar, PanelHeader },
   data() {
     return {
       dataItem: [
@@ -41,6 +43,7 @@ export default {
           icon: "fa-solid fa-book-open",
         },
       ],
+      style: [{}],
     };
   },
 

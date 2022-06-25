@@ -21,10 +21,11 @@
 
 <script>
 export default {
+  name: "Sidebar",
   props: {
     items: Object,
     header: String,
-    width: String,
+    width: Object,
   },
 };
 </script>
