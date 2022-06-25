@@ -1,5 +1,8 @@
 <template>
+  <!-- Panel Header -->
   <PanelHeader judul="Profil" caption="Memuat Struktur Organisasi & Tupoksi Bidang" />
+
+  <!-- Panel Content -->
   <div class="container mx-auto py-20">
     <div class="flex flex-wrap lg:flex-nowrap justify-center px-[1.5rem]">
       <!-- Sidebar -->

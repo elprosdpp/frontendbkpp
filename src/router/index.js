@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { vueRouter, createRouter, createWebHistory } from 'vue-router'
 
 // Langsung Panggil Home View
 import HomeView from '../views/HomeView.vue';
@@ -8,7 +8,8 @@ import Profil from '../views/profil/WrapProfilView.vue';
 import Struktur from '../views/profil/StrukturView.vue';
 import Tupoksi from '../views/profil/TupoksiView.vue';
 
-
+// Routes Group Berita
+import Berita from '../views/berita/BeritaView.vue';
 
 const routes = [
   {
@@ -39,6 +40,15 @@ const routes = [
       }
     ]
   },
+
+  {
+    path: '/berita',
+    name: 'Berita',
+    component: Berita,
+    meta: { title: 'Berita - BKPPUNW' },
+  },
+
+
 ]
 
 

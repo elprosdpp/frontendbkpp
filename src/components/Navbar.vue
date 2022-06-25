@@ -45,12 +45,13 @@
           >
             PROFIL
           </router-link>
-          <a
-            href=""
+          <router-link
+            to="/berita"
+            :class="{ 'router-link-active': subIsActive('/berita') }"
             class="hidden md:block lg:block px-3 text-link hover:text-hover font-semibold"
           >
             BERITA
-          </a>
+          </router-link>
           <!--Hoverable Link-->
           <div class="hoverable z-50">
             <a
@@ -300,17 +301,24 @@
                   <ul class="w-full border-gray-600">
                     <li>
                       <router-link
+                        to="/"
+                        class="block p-3 hover:text-hover hover:font-bold text-link"
+                        >Beranda
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link
                         to="/profil"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
                         >Profil
                       </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/berita"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Berita</a
-                      >
+                        >Berita
+                      </router-link>
                     </li>
                   </ul>
                 </div>
