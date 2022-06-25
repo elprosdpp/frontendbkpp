@@ -267,7 +267,8 @@ export default {
       images: [
         {
           id: "1",
-          img: "https://via.placeholder.com/1920x700",
+          img:
+            "https://i.picsum.photos/id/1029/4887/2759.jpg?hmac=uMSExsgG8_PWwP9he9Y0LQ4bFDLlij7voa9lU9KMXDE",
           title: "Slide 1",
           caption: "ini adalah slide 1",
         },
