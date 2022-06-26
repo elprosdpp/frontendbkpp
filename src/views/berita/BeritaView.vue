@@ -2,18 +2,24 @@
   <!-- Panel Header -->
   <PanelHeader judul="Berita" caption="Memuat Semua Berita" />
 
-  <!-- Panel Content -->
-  <div class="container mx-auto py-20">
-    <div class="flex flex-wrap lg:flex-nowrap justify-center px-[1.5rem]">
-      <h1>Hallo Ini Halaman Berita 👋</h1>
-    </div>
-  </div>
+  <!-- Berita Section -->
+  <BeritaComp :items="itemBerita"></BeritaComp>
 </template>
 
 <script>
 import PanelHeader from "@/components/Panel.vue";
+import BeritaComp from "@/components/berita/Berita.vue";
+import dataBerita from "@/views/berita/berita.json";
+
 export default {
-  components: { PanelHeader },
+  name: "BeritaView",
+  components: { PanelHeader, BeritaComp },
+  data() {
+    return {
+      itemBerita: dataBerita,
+    };
+  },
+
   watch: {
     $route: {
       immediate: true,

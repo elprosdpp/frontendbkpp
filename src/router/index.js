@@ -10,6 +10,7 @@ import Tupoksi from '../views/profil/TupoksiView.vue';
 
 // Routes Group Berita
 import Berita from '../views/berita/BeritaView.vue';
+import Detail from '../views/berita/DetailBeritaView.vue';
 
 const routes = [
   {
@@ -46,7 +47,16 @@ const routes = [
     name: 'Berita',
     component: Berita,
     meta: { title: 'Berita - BKPPUNW' },
+    children: [
+    ]
   },
+  {
+    path: '/berita/d/:id',
+    props: true,
+    name: "detailberita",
+    component: Detail
+  }
+
 
 
 ]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "author": "Admin",
+    "title": "Berita 1",
+    "category": "Technology",
+    "description": "Desc 1",
+    "img": "https://picsum.photos/id/130/3807/2538"
+  },
+  {
+    "id": "2",
+    "author": "Zack",
+    "title": "Berita 2",
+    "category": "News",
+    "description": "Desc 2",
+    "img": "https://picsum.photos/id/122/4147/2756"
+  },
+  {
+    "id": "3",
+    "author": "Foo",
+    "title": "Berita 3",
+    "category": "Information",
+    "description": "Desc 3",
+    "img": "https://picsum.photos/id/127/4032/2272"
+  },
+  {
+    "id": "4",
+    "author": "Bar",
+    "title": "Berita 4",
+    "category": "Technology",
+    "description": "Desc 4",
+    "img": "https://picsum.photos/id/163/2000/1333"
+  }
+]

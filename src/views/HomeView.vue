@@ -274,7 +274,8 @@ export default {
         },
         {
           id: "2",
-          img: "https://via.placeholder.com/1920x700",
+          img:
+            "https://i.picsum.photos/id/585/1920/700.jpg?hmac=10q-ASfYk7v4FtL0uTBQHrcXo43jik7l1fPG1cuBJU8",
           title: "Slide 2",
           caption: "ini adalah slide 2",
         },
