@@ -51,7 +51,7 @@ const routes = [
     ]
   },
   {
-    path: '/berita/d/:id',
+    path: '/berita/d/:slug',
     props: true,
     name: "detailberita",
     component: Detail

@@ -17,7 +17,7 @@
           :key="b.id"
           class="w-80 mb-5 bg-white rounded-lg border-2 border-rBlue shadow-sm cursor-pointer md:mx-3 md:w-96 lg:w-96 hover:border-navy hover:shadow-md hover:-translate-y-3 duration-300"
         >
-          <router-link :to="{ name: 'detailberita', params: { id: b.id } }">
+          <router-link :to="{ name: 'detailberita', params: { slug: b.slug } }">
             <img
               class="p-3 w-full h-64 object-cover rounded-[1.2rem]"
               :src="b.img"
@@ -43,7 +43,7 @@
               <p class="text-xs">● 4 min ago</p>
               <!-- End Time Upload Left -->
             </div>
-            <router-link :to="{ name: 'detailberita', params: { id: b.id } }">
+            <router-link :to="{ name: 'detailberita', params: { slug: b.slug } }">
               <!-- Title News -->
               <h5
                 class="mb-2 text-md md:text-md lg:text-2xl font-bold tracking-tight text-dBlue"

@@ -5,6 +5,7 @@
     "title": "Berita 1",
     "category": "Technology",
     "description": "Desc 1",
+    "slug": "berita-1",
     "img": "https://picsum.photos/id/130/3807/2538"
   },
   {
@@ -13,6 +14,7 @@
     "title": "Berita 2",
     "category": "News",
     "description": "Desc 2",
+    "slug": "berita-2",
     "img": "https://picsum.photos/id/122/4147/2756"
   },
   {
@@ -21,6 +23,7 @@
     "title": "Berita 3",
     "category": "Information",
     "description": "Desc 3",
+    "slug": "berita-3",
     "img": "https://picsum.photos/id/127/4032/2272"
   },
   {
@@ -29,6 +32,7 @@
     "title": "Berita 4",
     "category": "Technology",
     "description": "Desc 4",
+    "slug": "berita-4",
     "img": "https://picsum.photos/id/163/2000/1333"
   }
 ]

@@ -16,11 +16,10 @@ import dataBerita from "@/views/berita/berita.json";
 
 export default {
   name: "DetailBerita",
-
   setup() {
     const route = useRoute();
     const berita = computed(() => {
-      return dataBerita.filter((a) => a.id === route.params.id)[0];
+      return dataBerita.filter((a) => a.slug === route.params.slug)[0];
     });
     return { berita };
   },
