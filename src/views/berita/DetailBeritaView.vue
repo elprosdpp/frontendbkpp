@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center h-72 bg-gray-50 bg-waves bg-center bg-no-repeat">
+  <div id="top" class="flex items-center h-72 bg-gray-50 bg-waves bg-center bg-no-repeat">
     <div class="container w-1/2 mx-auto p-5 -mt-[5.5rem]">
       <p class="text-sm text-center mb-2">{{ berita.published }}</p>
       <h1 class="text-2xl text-center font-bold text-dBlue uppercase">
@@ -44,6 +44,12 @@ export default {
     });
     return { berita };
   },
+
+  // methods: {
+  //   scrollBehavior() {
+  //     document.getElementById("top").scrollIntoView({ behavior: "smooth" });
+  //   },
+  // },
 
   watch: {
     $route: {

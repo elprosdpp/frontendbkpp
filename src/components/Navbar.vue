@@ -184,11 +184,16 @@
                       </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/kemahasiswaan/inkubatorBisnis"
+                        :class="{
+                          'router-link-active': isActive(
+                            '/kemahasiswaan/inkubatorBisnis'
+                          ),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Pusat Inkubator Bisnis</a
-                      >
+                        >Pusat Inkubator Bisnis
+                      </router-link>
                     </li>
                   </ul>
                   <ul class="w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">

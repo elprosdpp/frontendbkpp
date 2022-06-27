@@ -19,6 +19,7 @@ import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
 import Prestasi from '../views/kemahasiswaan/PrestasiMahasiswaView.vue';
 import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
 import Karir from '../views/kemahasiswaan/PusatKarirView.vue';
+import Bisnis from '../views/kemahasiswaan/PusatInkubatorBisnisView.vue';
 
 const routes = [
   {
@@ -100,13 +101,15 @@ const routes = [
         meta: { title: 'Pusat Karir - BKPPUNW' },
         component: Karir
       },
+      {
+        path: '/kemahasiswaan/inkubatorBisnis',
+        name: "InkubatorBisnis",
+        meta: { title: 'Pusat Inkubator Bisnis - BKPPUNW' },
+        component: Bisnis
+      },
     ]
   },
-
-
 ]
-
-
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -114,7 +117,7 @@ const router = createRouter({
   linkActiveClass: 'active',
   linkExactActiveClass: "exact-active",
   scrollBehavior() {
-    document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('app').scrollIntoView({ behavior: "smooth" });
   }
 })
 

@@ -66,7 +66,7 @@ export default {
         {
           id: "6",
           name: "Pusat Inkubator Bisnis",
-          link: "/kemahasiswaan/inkubator",
+          link: "/kemahasiswaan/inkubatorBisnis",
           icon: "fa-solid fa-database",
         },
       ],
