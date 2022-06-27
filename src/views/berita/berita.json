@@ -2,37 +2,41 @@
   {
     "id": "1",
     "author": "Admin",
-    "title": "Berita 1",
+    "title": "PENGENALAN KEHIDUPAN KAMPUS MAHASISWA BARU (OKEMABA UNW PERIODE MARET 2022)",
     "category": "Technology",
-    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
+    "published": "Monday, 27 June 2022",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque! ,Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-1",
-    "img": "https://picsum.photos/id/130/3807/2538"
+    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/965aaded9769e8d9fc13d5881ddbff6a.png"
   },
   {
     "id": "2",
     "author": "Zack",
-    "title": "Berita 2",
+    "title": "PEMILIHAN MAHASISWA BERPRESTASI",
     "category": "News",
+    "published": "Monday, 27 June 2022",
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-2",
-    "img": "https://picsum.photos/id/122/4147/2756"
+    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/3a67ac8dcf4f0e81b065e51df3cd2404.jpeg"
   },
   {
     "id": "3",
     "author": "Foo",
-    "title": "Berita 3",
+    "title": "PROGRAM KREATIFITAS MAHASISWA",
     "category": "Information",
+    "published": "Monday, 27 June 2022",
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-3",
-    "img": "https://picsum.photos/id/127/4032/2272"
+    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/c6f2fff79610e2949b158a2430af6c4c.jpeg"
   },
   {
     "id": "4",
     "author": "Bar",
-    "title": "Berita 4",
+    "title": "PEMBEKALAN WISUDA KE XII MARET UNIVERSITAS NGUDI WALUYO TAHUN 2022",
     "category": "Technology",
-    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
+    "published": "Monday, 27 June 2022",
+    "description": "Bersama ini kami sampaikan beberapa pengumuman terkait persiapan pelaksanaan WISUDA XII periode Maret Tahun 2022 Universitas Ngudi Waluyo yaitu Pembekalan Wisudawan Maret Universitas Ngudi Waluyo Tahun 2022. Yang akan dilaksanakan pada hari Jumat tanggal 11 Maret 2022 Jam 08.30 - Selesai Tempat Zoom Meeting ( Meeting ID : 838 1242 2339, passcode : WISUDA12).Sekian Informasi yang bisa kami sampaikan. Terimakasih",
     "slug": "berita-4",
-    "img": "https://picsum.photos/id/163/2000/1333"
+    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/2e323bd7a9c9f59b562533efb67164ac.jpg"
   }
 ]

@@ -90,7 +90,7 @@
               <h5
                 class="mb-2 text-md md:text-md lg:text-2xl font-bold tracking-tight text-dBlue"
               >
-                {{ b.title }}
+                {{ b.title.substring(0, 40) + ".." }}
               </h5>
               <!-- End Title News -->
             </router-link>

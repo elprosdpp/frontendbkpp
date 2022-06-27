@@ -52,7 +52,6 @@ const routes = [
   },
   {
     path: '/berita/d/:slug',
-    props: true,
     name: "detailberita",
     component: Detail
   }
@@ -70,13 +69,5 @@ const router = createRouter({
 })
 
 
-const DEFAULT_TITLE = 'BKPP UNW';
-router.afterEach((to, from) => {
-  // Use next tick to handle router history correctly
-  // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
-  Vue.nextTick(() => {
-    document.title = to.meta.title || DEFAULT_TITLE;
-  });
-});
 
 export default router
