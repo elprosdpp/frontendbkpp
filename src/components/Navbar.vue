@@ -127,9 +127,11 @@
                     </h3>
                     <li>
                       <router-link
-                        to="/kemahasiswaan"
+                        to="/kemahasiswaan/agendaMahasiswa"
                         :class="{
-                          'router-link-active': active('/kemahasiswaan/agendaMahasiswa'),
+                          'router-link-active': isActive(
+                            '/kemahasiswaan/agendaMahasiswa'
+                          ),
                         }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
                         >Agenda Mahasiswa</router-link
@@ -139,7 +141,7 @@
                       <router-link
                         to="/kemahasiswaan/organisasiMahasiswa"
                         :class="{
-                          'router-link-active': active(
+                          'router-link-active': isActive(
                             '/kemahasiswaan/organisasiMahasiswa'
                           ),
                         }"
@@ -148,25 +150,38 @@
                       >
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/kemahasiswaan/prestasiMahasiswa"
+                        :class="{
+                          'router-link-active': isActive(
+                            '/kemahasiswaan/prestasiMahasiswa'
+                          ),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Prestasi Mahasiswa</a
-                      >
+                        >Prestasi Mahasiswa
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/kemahasiswaan/panduanMahasiswa"
+                        :class="{
+                          'router-link-active': isActive(
+                            '/kemahasiswaan/panduanMahasiswa'
+                          ),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Panduan Mahasiswa</a
-                      >
+                        >Panduan Mahasiswa
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/kemahasiswaan/pusatKarir"
+                        :class="{
+                          'router-link-active': isActive('/kemahasiswaan/pusatKarir'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Pusat Karir</a
-                      >
+                        >Pusat Karir
+                      </router-link>
                     </li>
                     <li>
                       <a
@@ -624,8 +639,9 @@ export default {
       });
     },
 
-    active(path) {
-      return this.$route.path === path;
+    isActive(path) {
+      const rout = this.$route.path === path;
+      return rout;
     },
   },
 };

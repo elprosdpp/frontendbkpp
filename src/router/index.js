@@ -16,6 +16,9 @@ import Detail from '../views/berita/DetailBeritaView.vue';
 import Kemahasiswaan from '../views/kemahasiswaan/WrapKemahasiswaanView.vue';
 import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
 import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
+import Prestasi from '../views/kemahasiswaan/PrestasiMahasiswaView.vue';
+import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
+import Karir from '../views/kemahasiswaan/PusatKarirView.vue';
 
 const routes = [
   {
@@ -70,15 +73,33 @@ const routes = [
       {
         path: '/kemahasiswaan/agendaMahasiswa',
         name: "agendaMahasiswa",
-        meta: { title: 'Agenda Mahasiswa - BKPPUNW' },
+        meta: { title: 'Agenda Kemahasiswaan - BKPPUNW' },
         component: Agenda
       },
       {
         path: '/kemahasiswaan/organisasiMahasiswa',
         name: "OrganisasiMahasiswa",
-        meta: { title: 'Organisasi Mahasiswa - BKPPUNW' },
+        meta: { title: 'Organisasi Kemahasiswaan - BKPPUNW' },
         component: Organisasi
-      }
+      },
+      {
+        path: '/kemahasiswaan/prestasiMahasiswa',
+        name: "PrestasiMahasiswa",
+        meta: { title: 'Prestasi Kemahasiswaan - BKPPUNW' },
+        component: Prestasi
+      },
+      {
+        path: '/kemahasiswaan/panduanMahasiswa',
+        name: "PanduanMahasiswa",
+        meta: { title: 'Panduan Kemahasiswaan - BKPPUNW' },
+        component: Panduan
+      },
+      {
+        path: '/kemahasiswaan/pusatKarir',
+        name: "PusatKarir",
+        meta: { title: 'Pusat Karir - BKPPUNW' },
+        component: Karir
+      },
     ]
   },
 
@@ -91,6 +112,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   linkActiveClass: 'active',
+  linkExactActiveClass: "exact-active",
   scrollBehavior() {
     document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
   }

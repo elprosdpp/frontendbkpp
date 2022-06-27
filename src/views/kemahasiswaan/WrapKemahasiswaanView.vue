@@ -35,30 +35,36 @@ export default {
       dataItem: [
         {
           id: "1",
-          name: "Agenda Mahasiswa",
+          name: "Agenda Kemahasiswaan",
           link: "/kemahasiswaan/agendaMahasiswa",
           icon: "fa-solid fa-list-check",
         },
         {
           id: "2",
-          name: "Organisasi Mahasiswa",
+          name: "Organisasi Kemahasiswaan",
           link: "/kemahasiswaan/organisasiMahasiswa",
           icon: "fa-solid fa-sitemap",
         },
         {
           id: "3",
-          name: "Prestasi Mahasiswa",
+          name: "Prestasi Kemahasiswaan",
           link: "/kemahasiswaan/prestasiMahasiswa",
           icon: "fa-solid fa-trophy",
         },
         {
           id: "4",
+          name: "Panduan Kemahasiswaan",
+          link: "/kemahasiswaan/panduanMahasiswa",
+          icon: "fa-solid fa-book",
+        },
+        {
+          id: "5",
           name: "Pusat Karir",
           link: "/kemahasiswaan/pusatKarir",
           icon: "fa-solid fa-up-right-from-square",
         },
         {
-          id: "5",
+          id: "6",
           name: "Pusat Inkubator Bisnis",
           link: "/kemahasiswaan/inkubator",
           icon: "fa-solid fa-database",
