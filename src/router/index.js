@@ -12,6 +12,11 @@ import Tupoksi from '../views/profil/TupoksiView.vue';
 import Berita from '../views/berita/BeritaView.vue';
 import Detail from '../views/berita/DetailBeritaView.vue';
 
+// Routes Group Kemahasiswaan
+import Kemahasiswaan from '../views/kemahasiswaan/WrapKemahasiswaanView.vue';
+import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
+import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
+
 const routes = [
   {
     path: '/',
@@ -54,7 +59,30 @@ const routes = [
     path: '/berita/d/:slug',
     name: "detailberita",
     component: Detail
-  }
+  },
+  {
+    path: '/kemahasiswaan',
+    redirect: {
+      path: '/kemahasiswaan/agendaMahasiswa'
+    },
+    component: Kemahasiswaan,
+    children: [
+      {
+        path: '/kemahasiswaan/agendaMahasiswa',
+        name: "agendaMahasiswa",
+        meta: { title: 'Agenda Mahasiswa - BKPPUNW' },
+        component: Agenda
+      },
+      {
+        path: '/kemahasiswaan/organisasiMahasiswa',
+        name: "OrganisasiMahasiswa",
+        meta: { title: 'Organisasi Mahasiswa - BKPPUNW' },
+        component: Organisasi
+      }
+    ]
+  },
+
+
 ]
 
 

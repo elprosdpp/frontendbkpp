@@ -54,12 +54,13 @@
           </router-link>
           <!--Hoverable Link-->
           <div class="hoverable z-50">
-            <a
-              href="#"
+            <router-link
+              to="/kemahasiswaan"
+              :class="{ 'router-link-active': subIsActive('/kemahasiswaan') }"
               class="relative block py-10 px-3 lg:text-base text-link hover:text-hover font-semibold"
             >
               BKAPP
-            </a>
+            </router-link>
             <!-- Hover Mega Menu Auto Hidden In Max-Width 640px -->
             <div
               class="mega-menu mb-16 sm:mb-0 shadow-xl bg-white border-t border-[#E5E5E5]"
@@ -125,17 +126,25 @@
                       Kemahasiswaan
                     </h3>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/kemahasiswaan"
+                        :class="{
+                          'router-link-active': active('/kemahasiswaan/agendaMahasiswa'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Agenda Mahasiswa</a
+                        >Agenda Mahasiswa</router-link
                       >
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/kemahasiswaan/organisasiMahasiswa"
+                        :class="{
+                          'router-link-active': active(
+                            '/kemahasiswaan/organisasiMahasiswa'
+                          ),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Organisasi Mahasiswa</a
+                        >Organisasi Mahasiswa</router-link
                       >
                     </li>
                     <li>
@@ -358,10 +367,10 @@
                 <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                   <ul class="w-full border-gray-600">
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/kemahasiswaan"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Agenda Mahasiswa</a
+                        >Agenda Mahasiswa</router-link
                       >
                     </li>
                     <li>
@@ -609,8 +618,14 @@ export default {
     subIsActive(input) {
       const paths = Array.isArray(input) ? input : [input];
       return paths.some((path) => {
-        return this.$route.path.indexOf(path) === 0; // current path starts with this path string
+        const uri = this.$route.path.indexOf(path) === 0;
+        // console.log(path);
+        return uri; // current path starts with this path string
       });
+    },
+
+    active(path) {
+      return this.$route.path === path;
     },
   },
 };
