@@ -7,7 +7,7 @@
     "published": "Monday, 27 June 2022",
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque! ,Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-1",
-    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/965aaded9769e8d9fc13d5881ddbff6a.png"
+    "img": "https://picsum.photos/id/1019/5472/3648"
   },
   {
     "id": "2",
@@ -17,7 +17,7 @@
     "published": "Monday, 27 June 2022",
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-2",
-    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/3a67ac8dcf4f0e81b065e51df3cd2404.jpeg"
+    "img": "https://picsum.photos/id/102/4320/3240"
   },
   {
     "id": "3",
@@ -27,7 +27,7 @@
     "published": "Monday, 27 June 2022",
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-3",
-    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/c6f2fff79610e2949b158a2430af6c4c.jpeg"
+    "img": "https://picsum.photos/id/1020/4288/2848"
   },
   {
     "id": "4",
@@ -37,6 +37,6 @@
     "published": "Monday, 27 June 2022",
     "description": "Bersama ini kami sampaikan beberapa pengumuman terkait persiapan pelaksanaan WISUDA XII periode Maret Tahun 2022 Universitas Ngudi Waluyo yaitu Pembekalan Wisudawan Maret Universitas Ngudi Waluyo Tahun 2022. Yang akan dilaksanakan pada hari Jumat tanggal 11 Maret 2022 Jam 08.30 - Selesai Tempat Zoom Meeting ( Meeting ID : 838 1242 2339, passcode : WISUDA12).Sekian Informasi yang bisa kami sampaikan. Terimakasih",
     "slug": "berita-4",
-    "img": "http://unw.ac.id/images/infokemahasiswaan/bsr/2e323bd7a9c9f59b562533efb67164ac.jpg"
+    "img": "https://picsum.photos/id/1021/2048/1206"
   }
 ]
