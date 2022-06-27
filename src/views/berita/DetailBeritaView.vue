@@ -9,7 +9,11 @@
   </div>
   <div class="px-5">
     <div class="flex flex-wrap justify-center mb-4">
-      <img :src="berita.img" :alt="berita.title" class="w-[70%] mb-5 -mt-[7rem] rounded-lg" />
+      <img
+        :src="berita.img"
+        :alt="berita.title"
+        class="w-[70%] mb-5 -mt-[7rem] rounded-lg"
+      />
     </div>
     <div class="description text-justify px-[14rem] pb-20">
       <p class="text-lg">

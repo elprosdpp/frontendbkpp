@@ -61,9 +61,9 @@
         >
           <router-link :to="{ name: 'detailberita', params: { slug: b.slug } }">
             <img
-              class="p-3 w-full h-64 object-cover rounded-[1.2rem]"
               :src="b.img"
               :alt="b.title"
+              class="p-3 w-full h-64 object-cover rounded-[1.2rem]"
             />
           </router-link>
 
