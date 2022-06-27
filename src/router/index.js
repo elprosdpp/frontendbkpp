@@ -21,6 +21,13 @@ import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
 import Karir from '../views/kemahasiswaan/PusatKarirView.vue';
 import Bisnis from '../views/kemahasiswaan/PusatInkubatorBisnisView.vue';
 
+// Routes Group HumasPusatInkubatorBisnisView
+import Humas from '../views/humas/WrapHumasView.vue';
+import AgendaHumas from '../views/humas/AgendaKehumasanView.vue';
+import Keprotokoleran from '../views/humas/KeprotokoleranView.vue';
+import PublikasiMedia from '../views/humas/PublikasiMediaView.vue';
+
+
 const routes = [
   {
     path: '/',
@@ -109,6 +116,35 @@ const routes = [
       },
     ]
   },
+  {
+    path: '/humas',
+    redirect: {
+      path: '/humas/agendaKehumasan'
+    },
+    component: Humas,
+    children: [
+      {
+        path: '/humas/agendaKehumasan',
+        name: "AgendaKehumasan",
+        meta: { title: 'Agenda Kehumasan - BKPPUNW' },
+        component: AgendaHumas
+      },
+      {
+        path: '/humas/keprotokoleran',
+        name: "Keprotokoleran",
+        meta: { title: 'Keprotokoleran - BKPPUNW' },
+        component: Keprotokoleran
+      },
+      {
+        path: '/humas/publikasiMedia',
+        name: "PublikasiMedai",
+        meta: { title: 'Publikasi Media - BKPPUNW' },
+        component: PublikasiMedia
+      },
+    ]
+  }
+
+
 ]
 
 const router = createRouter({

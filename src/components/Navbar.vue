@@ -199,25 +199,34 @@
                   <ul class="w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
                     <h3 class="font-bold text-md text-dBlue text-bold mb-2">Humas</h3>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/humas/agendaKehumasan"
+                        :class="{
+                          'router-link-active': isActive('/humas/agendaKehumasan'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Agenda Kehumasan</a
-                      >
+                        >Agenda Kehumasan
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/humas/keprotokoleran"
+                        :class="{
+                          'router-link-active': isActive('/humas/keprotokoleran'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Keprotokoleran</a
-                      >
+                        >Keprotokoleran
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/humas/publikasiMedia"
+                        :class="{
+                          'router-link-active': isActive('/humas/publikasiMedia'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Publikasi Media</a
-                      >
+                        >Publikasi Media
+                      </router-link>
                     </li>
                   </ul>
                   <ul class="w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
