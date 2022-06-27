@@ -56,7 +56,7 @@
           <div class="hoverable z-50">
             <router-link
               to="/kemahasiswaan"
-              :class="{ 'router-link-active': subIsActive('/kemahasiswaan') }"
+              :class="{ 'router-link-active': subIsActive(['/kemahasiswaan', '/humas']) }"
               class="relative block py-10 px-3 lg:text-base text-link hover:text-hover font-semibold"
             >
               BKAPP
