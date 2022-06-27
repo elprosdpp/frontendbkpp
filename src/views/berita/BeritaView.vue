@@ -99,7 +99,7 @@
             <p
               class="mb-3 text-xs md:text-sm lg:text-sm font-normal text-gray-700 dark:text-gray-400"
             >
-              {{ b.description }}
+              {{ b.description.substring(0, 100) + ".." }}
             </p>
             <!-- End Content in Limit Word -->
           </div>

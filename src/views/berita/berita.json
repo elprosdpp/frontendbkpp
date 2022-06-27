@@ -4,7 +4,7 @@
     "author": "Admin",
     "title": "Berita 1",
     "category": "Technology",
-    "description": "Desc 1",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-1",
     "img": "https://picsum.photos/id/130/3807/2538"
   },
@@ -13,7 +13,7 @@
     "author": "Zack",
     "title": "Berita 2",
     "category": "News",
-    "description": "Desc 2",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-2",
     "img": "https://picsum.photos/id/122/4147/2756"
   },
@@ -22,7 +22,7 @@
     "author": "Foo",
     "title": "Berita 3",
     "category": "Information",
-    "description": "Desc 3",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-3",
     "img": "https://picsum.photos/id/127/4032/2272"
   },
@@ -31,7 +31,7 @@
     "author": "Bar",
     "title": "Berita 4",
     "category": "Technology",
-    "description": "Desc 4",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quaerat consequatur. Reiciendis quibusdam repudiandae placeat. Vero consectetur libero commodi atque!",
     "slug": "berita-4",
     "img": "https://picsum.photos/id/163/2000/1333"
   }
