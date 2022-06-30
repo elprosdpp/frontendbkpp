@@ -59,7 +59,10 @@
           :key="b.id"
           class="w-80 mb-5 bg-white rounded-lg border-2 border-rBlue shadow-sm cursor-pointer md:mx-3 md:w-96 lg:w-96 hover:border-navy hover:shadow-md hover:-translate-y-3 duration-300"
         >
-          <router-link :to="{ name: 'detailberita', params: { slug: b.slug } }">
+          <router-link
+            :to="{ name: 'detailberita', params: { slug: b.slug } }"
+            @click="scrollToTop"
+          >
             <img
               :src="b.img"
               :alt="b.title"
@@ -129,6 +132,12 @@ export default {
       return this.dataItem.filter((b) =>
         b.title.toLowerCase().includes(this.search.toLowerCase())
       );
+    },
+  },
+
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
     },
   },
 

@@ -18,3 +18,8 @@
   color: #344ba0;
   font-weight: bold;
 }
+
+.activePage {
+  background-color: #514aae;
+  color: #ffffff;
+}

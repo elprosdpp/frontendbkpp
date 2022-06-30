@@ -15,6 +15,7 @@ import Detail from '../views/berita/DetailBeritaView.vue';
 // Routes Group Kemahasiswaan
 import Kemahasiswaan from '../views/kemahasiswaan/WrapKemahasiswaanView.vue';
 import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
+// import AgendaSus from '../components/kemahasiswaan/SuspenseAgenda.vue';
 import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
 import Prestasi from '../views/kemahasiswaan/PrestasiMahasiswaView.vue';
 import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
