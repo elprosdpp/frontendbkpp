@@ -14,14 +14,15 @@
       <!-- End Button -->
 
       <!-- Index Halaman Sesuai Total Page -->
-      <li v-for="page in pages" :key="page">
+      <li v-for="page in pages" :key="page.name">
         <button
           type="button"
-          :class="{ activePage: page == pagination.current_page }"
+          :class="{ activePage: page.name == pagination.current_page }"
+          :disabled="page.isDisabled"
           class="py-2 px-3 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          @click.stop="change(page)"
+          @click.stop="change(page.name)"
         >
-          {{ page }}
+          {{ page.name }}
         </button>
       </li>
       <!-- End Index Halaman Sesuai Total Page -->
@@ -68,7 +69,10 @@ export default {
       }
       let pages = [];
       for (let page = from; page <= to; page++) {
-        pages.push(page);
+        pages.push({
+          name: page,
+          isDisabled: page == this.pagination.current_page,
+        });
       }
       return pages;
     },
