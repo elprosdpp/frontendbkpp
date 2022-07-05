@@ -1,9 +1,7 @@
 <template>
   <div v-if="errMsg">{{ errMsg }}</div>
-  <Suspense v-else>
-    <template #default>
-      <Agend />
-    </template>
+  <!--  <Suspense v-else>
+    <template #default> </template>
     <template #fallback>
       <div class="flex justify-center">
         <svg
@@ -24,7 +22,8 @@
         </svg>
       </div>
     </template>
-  </Suspense>
+  </Suspense> -->
+  <Agend />
 </template>
 
 <script>

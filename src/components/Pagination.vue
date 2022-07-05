@@ -67,6 +67,9 @@
 <script>
 export default {
   props: {
+    items: {
+      type: Object,
+    },
     maxVisibleButtons: {
       type: Number,
       required: false,

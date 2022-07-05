@@ -5,7 +5,7 @@
   >
     <!-- tanggal upload content/agenda -->
     <div class="flex justify-between mb-3">
-      <p class="font-bold uppercase text-link text-sm">news</p>
+      <p class="font-bold uppercase text-link text-sm">{{ item.category }}</p>
       <p cla ss="font-bold uppercase text-link text-sm">Rabu, 29 Juni 2022</p>
     </div>
     <!-- end tanggal upload content/agenda -->
@@ -15,7 +15,7 @@
       </h5>
     </a>
     <p class="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-      {{ item.body }}
+      {{ item.description }}
     </p>
   </div>
   <!-- </div> -->

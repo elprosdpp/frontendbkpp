@@ -92,12 +92,7 @@
 
     <!-- Pagination -->
     <div class="flex justify-center py-24">
-      <Pagination
-        :totalPages="10"
-        :perPage="10"
-        :currentPage="currentPage"
-        @pagechanged="onPageChange"
-      />
+      <pagination :pagination="pagination" @paginate="fetchUsers" :offset="4" />
     </div>
     <!-- End Pagination -->
   </div>
@@ -107,7 +102,7 @@
 import axios from "axios";
 import { defineAsyncComponent, ref } from "vue";
 import Loading from "./LoadingAgenda.vue";
-import Pagination from "@/components/Pagination.vue";
+import Pagination from "../PaginationTailwind.vue";
 
 const AsyncAgenda = defineAsyncComponent({
   loader: () => import("./AgendaComp.vue" /* webpackChunkName: "Agenda" */),
@@ -120,40 +115,58 @@ export default {
   name: "Agenda",
   components: {
     AsyncAgenda,
-    Pagination,
+    pagination: Pagination,
   },
 
   data() {
     return {
-      currentPage: 1,
+      offset: 4,
+      pagination: {},
+      items: [],
+      error: "",
     };
+  },
+
+  created: function () {
+    this.fetchUsers();
   },
 
   methods: {
-    onPageChange(page) {
-      console.log(page);
-      this.currentPage = page;
+    fetchUsers: function () {
+      let current_page = this.pagination.current_page;
+      let pageNum = current_page ? current_page : 1;
+
+      axios
+        .get(`http://localhost:8000/api/blog?page=${pageNum}`)
+        .then((response) => {
+          this.pagination = response.data.meta;
+          this.items = response.data.data;
+        })
+        .catch((e) => {
+          this.error = "Data Tidak Ditemukan!";
+        });
     },
   },
 
-  async setup() {
-    const items = ref(null);
-    const error = ref(null);
+  // async setup() {
+  //   const items = ref(null);
+  //   const error = ref(null);
+  //   let current_page = this.pagination.current_page;
+  //   let pageNum = current_page ? current_page : 1;
 
-    try {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts?_limit=10"
-      );
-      items.value = response.data;
-    } catch (e) {
-      error.value = "Data Tidak Ditemukan!";
-    }
-    // console.log(items);
-    return {
-      items,
-      error,
-    };
-  },
+  //   try {
+  //     const response = await axios.get(`http://localhost:8000/api/blog?=${pageNum}`);
+  //     this.pagination = response.data.pagination;
+  //     items.value = response.data;
+  //   } catch (e) {
+  //     error.value = "Data Tidak Ditemukan!";
+  //   }
+  //   // console.log(items);
+  //   return {
+  //     items,
+  //     error,
+  //   };
+  // },
 };
 </script>
 
