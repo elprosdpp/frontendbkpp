@@ -24,7 +24,10 @@
 <script>
 export default {
   name: "AgendaComp",
-  props: ["item"],
+  inheritAttrs: false,
+  props: {
+    item: Object,
+  },
 };
 </script>
 

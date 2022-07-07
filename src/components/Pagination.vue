@@ -77,15 +77,15 @@ export default {
     },
     totalPages: {
       value: [Number, String],
-      required: true,
+      required: false,
     },
     perPage: {
       value: [Number, String],
-      required: true,
+      required: false,
     },
     currentPage: {
       type: Number,
-      required: true,
+      required: false,
     },
   },
   computed: {

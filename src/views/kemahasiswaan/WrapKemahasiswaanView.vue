@@ -1,23 +1,25 @@
 <template>
-  <!-- Panel Header -->
-  <PanelHeader judul="Kemahasiswaan" caption="Memuat Semua Menu Kemahasiswan" />
+  <div class="">
+    <!-- Panel Header -->
+    <PanelHeader judul="Kemahasiswaan" caption="Memuat Semua Menu Kemahasiswan" />
 
-  <!-- Panel Content -->
-  <div class="container mx-auto py-20">
-    <div class="flex flex-wrap lg:flex-nowrap justify-center px-[1.5rem]">
-      <!-- Sidebar -->
-      <Sidebar
-        :items="dataItem"
-        header="Kemahasiswaan"
-        :width="['Sidebar', 'w-96 mb-5 md:w-10/12 lg:w-1/3']"
-      />
-      <!-- End Sidebar -->
+    <!-- Panel Content -->
+    <div class="container mx-auto py-20">
+      <div class="flex flex-wrap lg:flex-nowrap justify-center px-[1.5rem]">
+        <!-- Sidebar -->
+        <Sidebar
+          :items="dataItem"
+          header="Kemahasiswaan"
+          :width="['Sidebar', 'w-96 mb-5 md:w-10/12 lg:w-1/3']"
+        />
+        <!-- End Sidebar -->
 
-      <!-- Content -->
-      <div class="w-96 h-auto md:w-10/12 lg:w-10/11 lg:mx-5">
-        <router-view></router-view>
+        <!-- Content -->
+        <div class="w-96 h-auto md:w-10/12 lg:w-10/11 lg:mx-5">
+          <router-view v-bind="$attrs"></router-view>
+        </div>
+        <!-- End Content -->
       </div>
-      <!-- End Content -->
     </div>
   </div>
 </template>
@@ -27,6 +29,7 @@ import PanelHeader from "@/components/Panel.vue";
 import Sidebar from "@/components/Sidebar.vue";
 
 export default {
+  inheritAttrs: false,
   components: { Sidebar, PanelHeader },
   data() {
     return {

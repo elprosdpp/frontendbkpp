@@ -1,7 +1,9 @@
 <template>
   <div v-if="errMsg">{{ errMsg }}</div>
-  <!--  <Suspense v-else>
-    <template #default> </template>
+  <Suspense v-else>
+    <template #default>
+      <Agend />
+    </template>
     <template #fallback>
       <div class="flex justify-center">
         <svg
@@ -22,13 +24,14 @@
         </svg>
       </div>
     </template>
-  </Suspense> -->
-  <Agend />
+  </Suspense>
 </template>
 
 <script>
-import { onErrorCaptured, ref } from "vue";
+import { defineAsyncComponent, onErrorCaptured, ref } from "vue";
 import Agend from "@/components/kemahasiswaan/Agenda.vue";
+
+// const Agend = defineAsyncComponent(() => import("@/components/kemahasiswaan/Agenda.vue"));
 export default {
   components: { Agend },
 

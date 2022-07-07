@@ -19,6 +19,9 @@
 <script>
 export default {
   name: "LoadingAgenda",
+  props: {
+    item: Object,
+  },
 };
 </script>
 

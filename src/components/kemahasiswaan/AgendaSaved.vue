@@ -1,6 +1,9 @@
 <template>
+  <!-- Handle Error -->
+  <div v-if="error">{{ error }}</div>
+
   <!-- Wrapper Agenda -->
-  <div class="content">
+  <div v-else class="content">
     <div class="border-b mb-5"></div>
 
     <!-- Search & Select Option -->
@@ -38,7 +41,7 @@
             type="text"
             id="default-search"
             v-model="search"
-            @keyup="fetchAgenda"
+            @keyup="onPageChange"
             class="block p-4 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 lg:w-[25rem]"
             placeholder="Cari Agenda"
             required
@@ -51,7 +54,7 @@
     <div class="border-b mb-5"></div>
 
     <!-- Content Agenda -->
-    <!-- <div v-if="loading" class="flex justify-center">
+    <div v-if="loading" class="flex justify-center">
       <svg
         role="status"
         class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -68,18 +71,23 @@
           fill="currentFill"
         ></path>
       </svg>
-    </div> -->
+    </div>
 
-    <!-- Handle Error -->
-    <div class="flex justify-between flex-wrap">
-      <div v-if="error">{{ error }}</div>
-      <AsyncAgenda v-else v-for="item in items" :key="item.id" :item="item" />
+    <div v-else class="flex justify-between flex-wrap">
+      <AsyncAgenda v-for="item in items" :key="item.id" :item="item" />
+      <!-- <div v-if="info">{{ info }}</div> -->
     </div>
     <!-- End Content Agenda -->
 
     <!-- Pagination -->
     <div class="flex justify-center py-24">
       <!-- <pagination :pagination="pagination" @paginate="fetchAgenda" :offset="4" /> -->
+      <pagination
+        :totalPages="pagination.last_page"
+        :perPage="pagination.per_page"
+        :currentPage="pagination.current_page"
+        @pagechanged="onPageChange"
+      />
     </div>
     <!-- End Pagination -->
   </div>
@@ -87,77 +95,94 @@
 
 <script>
 import axios from "axios";
-import { defineAsyncComponent, ref } from "vue";
+import { defineAsyncComponent } from "vue";
 import Loading from "./LoadingAgenda.vue";
-import Pagination from "../PaginationTailwind.vue";
+import Pagination from "../Pagination.vue";
 
 const AsyncAgenda = defineAsyncComponent({
-  loader: () => import("./AgendaComp.vue" /* webpackChunkName: "Agenda" */),
+  loader: () => import("./AgendaCompSaved.vue" /* webpackChunkName: "Agenda" */),
   loadingComponent: Loading,
   delay: 200,
   suspensible: false,
+  inheritAttrs: false, // This..
 });
 
 export default {
   name: "Agenda",
+  inheritAttrs: false,
+  components: {
+    AsyncAgenda,
+    pagination: Pagination,
+  },
 
-  // data() {
-  //   return {
-  //     offset: 4,
-  //     pagination: {},
-  //     items: "",
-  //     error: "",
-  //     search: "",
-  //     loading: false,
-  //   };
-  // },
-
-  // created: function () {
-  //   this.fetchAgenda();
-  // },
-
-  // methods: {
-  //   fetchAgenda: function () {
-  //     let current_page = this.pagination.current_page;
-  //     let pageNum = current_page ? current_page : 1;
-  //     this.loading = true; //the loading begin
-  //     axios
-  //       .get(`http://localhost:8000/api/blog?page=${pageNum}&s=${this.search}`)
-  //       .then((response) => {
-  //         this.pagination = response.data.meta;
-  //         this.items = response.data.data;
-  //       })
-  //       .catch((e) => {
-  //         this.error = "Data Tidak Ditemukan!";
-  //       })
-  //       .finally(() => (this.loading = false)); // set loading to false when request finish
-  //   },
-  // },
-
-  async setup() {
-    const items = ref(null);
-    const error = ref(null);
-    const search = ref(null);
-
-    try {
-      const response = await axios.get(`http://localhost:8000/api/blog`);
-      // this.pagination = response.data.pagination;
-      items.value = response.data.data;
-    } catch (e) {
-      error.value = "Data Tidak Ditemukan!";
-    }
-    // console.log(items);
+  data() {
     return {
-      items,
-      error,
-      search,
+      // offset: 4,
+      currentPage: "",
+      pagination: "",
+      items: [],
+      error: "",
+      search: "",
+      loading: false,
     };
   },
 
-  components: {
-    AsyncAgenda,
-    // pagination: Pagination,
+  created() {
+    this.onPageChange();
   },
+
+  methods: {
+    onPageChange(page) {
+      // console.log(page);
+      this.loading = true; //the loading begin
+      axios
+        .get("http://localhost:8000/api/blog?page=" + page + "&s=" + this.search)
+        .then((response) => {
+          this.currentPage = page;
+          this.pagination = response.data.meta;
+          this.items = response.data.data;
+        })
+        .catch((e) => {
+          this.error = "Data Tidak Ditemukan!";
+        })
+        .finally(() => (this.loading = false)); // set loading to false when request finish
+    },
+    // fetchAgenda: function () {
+    //   let current_page = this.pagination.current_page;
+    //   let pageNum = current_page ? current_page : 1;
+    //   this.loading = true; //the loading begin
+    //   axios
+    //     .get(`http://localhost:8000/api/blog?page=${pageNum}&s=${this.search}`)
+    //     .then((response) => {
+    //       this.pagination = response.data.meta;
+    //       this.items = response.data.data;
+    //     })
+    //     .catch((e) => {
+    //       this.error = "Data Tidak Ditemukan!";
+    //     })
+    //     .finally(() => (this.loading = false)); // set loading to false when request finish
+    // },
+  },
+
+  // async setup() {
+  //   const items = ref(null);
+  //   const error = ref(null);
+
+  //   try {
+  //     const response = await axios.get(
+  //       `http://localhost:8000/api/blog`
+  //     );
+  //     this.pagination = response.data.pagination;
+  //     items.value = response.data;
+  //   } catch (e) {
+  //     error.value = "Data Tidak Ditemukan!";
+  //   }
+  //   // console.log(items);
+  //   return {
+  //     items,
+  //     error,
+  //   };
+  // },
 };
 </script>
 

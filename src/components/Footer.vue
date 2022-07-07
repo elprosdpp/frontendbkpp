@@ -5,8 +5,7 @@
         <div class="mb-6 md:mb-0">
           <a href="https://flowbite.com" class="flex items-center">
             <img src="@/assets/img/unw.png" class="mr-3 h-10" alt="FlowBite Logo" />
-            <span
-              class="self-center text-3xl font-bold whitespace-nowrap dark:text-white"
+            <span class="self-center text-3xl font-bold whitespace-nowrap dark:text-white"
               >BKPP UNW
             </span>
           </a>

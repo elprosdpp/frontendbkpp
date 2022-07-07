@@ -14,8 +14,8 @@ import Detail from '../views/berita/DetailBeritaView.vue';
 
 // Routes Group Kemahasiswaan
 import Kemahasiswaan from '../views/kemahasiswaan/WrapKemahasiswaanView.vue';
-import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
-// import AgendaSus from '../components/kemahasiswaan/SuspenseAgenda.vue';
+// import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
+import Agenda from '../components/kemahasiswaan/AgendaSaved.vue';
 import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
 import Prestasi from '../views/kemahasiswaan/PrestasiMahasiswaView.vue';
 import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
@@ -153,9 +153,9 @@ const router = createRouter({
   routes,
   linkActiveClass: 'active',
   linkExactActiveClass: "exact-active",
-  scrollBehavior() {
-    document.getElementById('app').scrollIntoView({ behavior: "smooth" });
-  }
+  // scrollBehavior() {
+  //   document.getElementById('app').scrollIntoView({ behavior: "smooth" });
+  // }
 })
 
 
