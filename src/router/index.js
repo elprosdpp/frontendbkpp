@@ -15,8 +15,13 @@ import Detail from '../views/berita/DetailBeritaView.vue';
 // Routes Group Kemahasiswaan
 import Kemahasiswaan from '../views/kemahasiswaan/WrapKemahasiswaanView.vue';
 import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
-// import Agenda from '../components/kemahasiswaan/Agenda.vue';
 import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
+
+// ORGANISASI MAHASISWA GROUP
+import IntroOrmawaView from '../views/kemahasiswaan/organisasiMahasiswa/IntroOrmawaView.vue';
+import DetailOrmawaView from '../views/kemahasiswaan/organisasiMahasiswa/DetailOrmawaView.vue';
+// END ORGANISASI MAHASISWA GROUP
+
 import Prestasi from '../views/kemahasiswaan/PrestasiMahasiswaView.vue';
 import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
 import Karir from '../views/kemahasiswaan/PusatKarirView.vue';
@@ -86,10 +91,22 @@ const routes = [
         component: Agenda
       },
       {
-        path: '/kemahasiswaan/organisasiMahasiswa',
+        path: '/kemahasiswaan/organisasiMahasiswa/',
         name: "OrganisasiMahasiswa",
         meta: { title: 'Organisasi Kemahasiswaan - BKPPUNW' },
-        component: Organisasi
+        component: Organisasi,
+        children: [
+          {
+            path: '',
+            name: 'OrganisasiMahasiswa.introOrmawa',
+            component: IntroOrmawaView,
+          },
+          {
+            path: ':slug',
+            name: 'OrganisasiMahasiswa.DetailOrmawa',
+            component: DetailOrmawaView,
+          },
+        ]
       },
       {
         path: '/kemahasiswaan/prestasiMahasiswa',

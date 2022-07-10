@@ -16,7 +16,7 @@
 
         <!-- Content -->
         <div class="w-[23rem] h-auto md:w-10/12 lg:w-10/11 lg:mx-5">
-          <router-view v-bind="$attrs"></router-view>
+          <router-view></router-view>
         </div>
         <!-- End Content -->
       </div>

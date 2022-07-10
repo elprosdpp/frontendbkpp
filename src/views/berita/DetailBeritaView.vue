@@ -45,12 +45,6 @@ export default {
     return { berita };
   },
 
-  // methods: {
-  //   scrollBehavior() {
-  //     document.getElementById("top").scrollIntoView({ behavior: "smooth" });
-  //   },
-  // },
-
   watch: {
     $route: {
       immediate: true,

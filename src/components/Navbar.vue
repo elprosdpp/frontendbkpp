@@ -148,9 +148,10 @@
                       <router-link
                         to="/kemahasiswaan/organisasiMahasiswa"
                         :class="{
-                          'router-link-active': isActive(
-                            '/kemahasiswaan/organisasiMahasiswa'
-                          ),
+                          'router-link-active': isActive([
+                            '/kemahasiswaan/organisasiMahasiswa',
+                            '/:slug',
+                          ]),
                         }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
                         >Organisasi Mahasiswa</router-link
