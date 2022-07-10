@@ -28,11 +28,12 @@
 </template>
 
 <script>
-import { defineAsyncComponent, onErrorCaptured, ref } from "vue";
+import { onErrorCaptured, ref } from "vue";
 import Agend from "@/components/kemahasiswaan/Agenda.vue";
 
 // const Agend = defineAsyncComponent(() => import("@/components/kemahasiswaan/Agenda.vue"));
 export default {
+  name: "AgendaMahasiswa",
   components: { Agend },
 
   setup() {

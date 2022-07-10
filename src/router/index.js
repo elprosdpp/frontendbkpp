@@ -14,8 +14,8 @@ import Detail from '../views/berita/DetailBeritaView.vue';
 
 // Routes Group Kemahasiswaan
 import Kemahasiswaan from '../views/kemahasiswaan/WrapKemahasiswaanView.vue';
-// import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
-import Agenda from '../components/kemahasiswaan/AgendaSaved.vue';
+import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
+// import Agenda from '../components/kemahasiswaan/Agenda.vue';
 import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
 import Prestasi from '../views/kemahasiswaan/PrestasiMahasiswaView.vue';
 import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
@@ -81,7 +81,7 @@ const routes = [
     children: [
       {
         path: '/kemahasiswaan/agendaMahasiswa',
-        name: "agendaMahasiswa",
+        name: "AgendaMahasiswa",
         meta: { title: 'Agenda Kemahasiswaan - BKPPUNW' },
         component: Agenda
       },
