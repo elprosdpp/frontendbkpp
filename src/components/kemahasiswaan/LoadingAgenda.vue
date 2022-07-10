@@ -5,13 +5,13 @@
   >
     <!-- tanggal upload content/agenda -->
     <div class="flex justify-between mb-3">
-      <div class="w-10 h-10 bg-link card-pulse"></div>
-      <div class="w-44 h-10 bg-link card-pulse"></div>
+      <div class="w-10 h-10 rounded-lg bg-link card-pulse"></div>
+      <div class="w-44 h-10 rounded-lg bg-link card-pulse"></div>
     </div>
     <!-- end tanggal upload content/agenda -->
 
-    <div class="mb-2 w-full h-10 bg-link card-pulse"></div>
-    <div class="mb-2 w-full h-10 bg-link card-pulse"></div>
+    <div class="mb-2 w-full rounded-lg h-10 bg-link card-pulse"></div>
+    <div class="mb-2 w-full rounded-lg h-10 bg-link card-pulse"></div>
   </div>
   <!-- </div> -->
 </template>

@@ -1,14 +1,13 @@
 <template>
   <!-- Handle Error -->
   <div v-if="error">{{ error }}</div>
-
   <!-- Wrapper Agenda -->
   <div v-else class="content">
     <div class="border-b mb-5"></div>
 
     <!-- Search & Select Option -->
     <div class="flex flex-wrap justify-between items-center pb-5">
-      <div class="">
+      <div>
         <h1 class="text-xl text-dBlue font-bold">Agenda Kemahasiswaan</h1>
         <p class="text-sm">Memuat Semua Agenda Kemahasiswaan</p>
       </div>
@@ -74,14 +73,23 @@
     </div>
 
     <div v-else class="flex justify-between flex-wrap">
-      <AsyncAgenda v-for="item in items" :key="item.id" :item="item" />
-      <!-- <div v-if="info">{{ info }}</div> -->
+      <!-- if data tidak ditemukan -->
+      <div class="text-center py-10" v-if="!items || !items.length">
+        Data Tidak Ditemukan
+      </div>
+      <!-- End if data tidak ditemukan -->
+      <AsyncAgenda v-else v-for="item in items" :key="item.id" :item="item" />
     </div>
+
     <!-- End Content Agenda -->
 
     <!-- Pagination -->
-    <div class="flex justify-center py-24">
+    <div class="flex flex-wrap justify-center lg:justify-between items-center py-20">
       <!-- <pagination :pagination="pagination" @paginate="fetchAgenda" :offset="4" /> -->
+      <p class="mb-5 font-semibold text-link lg:mb-0">
+        Showing {{ pagination.from }} To {{ pagination.to }} of
+        {{ pagination.total }} Entries
+      </p>
       <pagination
         :totalPages="pagination.last_page"
         :perPage="pagination.per_page"
@@ -98,6 +106,7 @@ import axios from "axios";
 import { defineAsyncComponent } from "vue";
 import Loading from "./LoadingAgenda.vue";
 import Pagination from "../Pagination.vue";
+// import Agenda from "@/components/kemahasiswaan/AgendaCompSaved.vue";
 
 const AsyncAgenda = defineAsyncComponent({
   loader: () => import("./AgendaCompSaved.vue" /* webpackChunkName: "Agenda" */),
@@ -117,7 +126,6 @@ export default {
 
   data() {
     return {
-      // offset: 4,
       currentPage: "",
       pagination: "",
       items: [],
@@ -138,9 +146,9 @@ export default {
       axios
         .get("http://localhost:8000/api/blog?page=" + page + "&s=" + this.search)
         .then((response) => {
-          this.currentPage = page;
           this.pagination = response.data.meta;
           this.items = response.data.data;
+          this.currentPage = page;
         })
         .catch((e) => {
           this.error = "Data Tidak Ditemukan!";

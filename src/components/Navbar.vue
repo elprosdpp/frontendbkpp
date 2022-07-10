@@ -53,19 +53,26 @@
             BERITA
           </router-link>
           <!--Hoverable Link-->
-          <div class="hoverable z-50">
-            <router-link
+          <div class="hoverable z-50" @click="isOpen = !isOpen">
+            <!-- <router-link
               to="/kemahasiswaan"
               :class="{ 'router-link-active': subIsActive(['/kemahasiswaan', '/humas']) }"
               class="relative block py-10 px-3 lg:text-base text-link hover:text-hover font-semibold"
             >
               BKAPP
-            </router-link>
+            </router-link> -->
+            <button
+              type="button"
+              :class="{ 'router-link-active': subIsActive(['/kemahasiswaan', '/humas']) }"
+              class="relative block py-10 px-3 lg:text-base text-link hover:text-hover font-semibold"
+            >
+              BKAPP
+            </button>
             <!-- Hover Mega Menu Auto Hidden In Max-Width 640px -->
             <div
               class="mega-menu mb-16 sm:mb-0 shadow-xl bg-white border-t border-[#E5E5E5]"
             >
-              <div class="container mx-auto p-5 text-link mb-8">
+              <div class="container mx-auto p-5 text-link mb-8" v-if="isOpen">
                 <!-- Head Megamenu -->
                 <div class="flex flex-wrap justify-between items-center">
                   <div class="left">
@@ -313,6 +320,7 @@
                   data-accordion-target="#accordion-collapse-body-0"
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-0"
+                  @click="isOpen = !isOpen"
                 >
                   <span class="text-dBlue font-bold">Umum</span>
                   <svg
@@ -335,7 +343,10 @@
                 class="hidden"
                 aria-labelledby="accordion-collapse-heading-0"
               >
-                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                <div
+                  class="p-5 border border-b-0 border-gray-200 dark:border-gray-700"
+                  v-if="isOpen"
+                >
                   <ul class="w-full border-gray-600">
                     <li>
                       <router-link
@@ -371,6 +382,7 @@
                   data-accordion-target="#accordion-collapse-body-1"
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-1"
+                  @click="isOpen = !isOpen"
                 >
                   <span class="text-dBlue font-bold">Kemahasiswaan</span>
                   <svg
@@ -393,7 +405,10 @@
                 class="hidden"
                 aria-labelledby="accordion-collapse-heading-1"
               >
-                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                <div
+                  class="p-5 border border-b-0 border-gray-200 dark:border-gray-700"
+                  v-if="isOpen"
+                >
                   <ul class="w-full border-gray-600">
                     <li>
                       <router-link
@@ -450,6 +465,7 @@
                   data-accordion-target="#accordion-collapse-body-2"
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-2"
+                  @click="isOpen = !isOpen"
                 >
                   <span class="text-dBlue font-bold">Humas</span>
                   <svg
@@ -508,6 +524,7 @@
                   data-accordion-target="#accordion-collapse-body-3"
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-3"
+                  @click="isOpen = !isOpen"
                 >
                   <span class="text-dBlue font-bold">Perencanaan Pengembangan</span>
                   <svg
@@ -580,6 +597,7 @@
                   data-accordion-target="#accordion-collapse-body-4"
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-4"
+                  @click="isOpen = !isOpen"
                 >
                   <span class="text-dBlue font-bold">Download</span>
                   <svg
@@ -643,6 +661,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
   methods: {
     subIsActive(input) {
       const paths = Array.isArray(input) ? input : [input];
@@ -669,7 +692,7 @@ export default {
 /* #Mega Menu Styles
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .mega-menu {
-  display: none;
+  display: block;
   left: 0;
   position: absolute;
   text-align: left;
@@ -682,7 +705,7 @@ export default {
   position: static;
 }
 
-.hoverable > a:after {
+.hoverable > button:after {
   font-family: FontAwesome;
   content: "\f0d7";
   font-size: 15px;
@@ -690,7 +713,7 @@ export default {
   position: relative;
   top: -1px;
 }
-.hoverable > a:hover:after {
+.hoverable > button:hover:after {
   font-family: FontAwesome;
   content: "\f0de";
   font-size: 15px;
@@ -699,9 +722,9 @@ export default {
   top: 1px;
 }
 
-.hoverable:hover .mega-menu {
+/* .hoverable:hover .mega-menu {
   display: block;
-}
+} */
 
 .mobile {
   display: none;
