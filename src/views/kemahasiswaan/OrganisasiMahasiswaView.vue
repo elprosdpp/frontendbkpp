@@ -17,7 +17,8 @@
         <button
           class="text-dBlue outline outline-2 outline-rBlue font-bold rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
           type="button"
-          @click="isOpen = !isOpen"
+          @click.prevent="toggleDropdown"
+          @blur="close"
         >
           Organisasi Mahasiswa
           <svg
@@ -37,7 +38,7 @@
         </button>
         <!-- Dropdown menu -->
         <div
-          v-if="isOpen"
+          v-show="isOpen"
           id="dropdown"
           class="z-50 block bg-white divide-y divide-gray-100 rounded shadow-md"
           style="position: absolute; width: 13rem; transform: translate(2px, 11px)"
@@ -87,6 +88,7 @@ export default {
 
   mounted() {
     this.getData();
+    // document.addEventListener("click", this.close);
   },
 
   methods: {
@@ -95,6 +97,16 @@ export default {
         .get(url)
         .then((response) => (this.items = response.data.data))
         .catch((error) => console.log(error));
+    },
+
+    toggleDropdown(e) {
+      this.isOpen = !this.isOpen;
+    },
+    
+    close(e) {
+      setTimeout(() => {
+        this.isOpen = false;
+      }, 200);
     },
   },
 };

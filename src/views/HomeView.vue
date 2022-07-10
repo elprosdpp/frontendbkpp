@@ -40,7 +40,7 @@
           <p class="text-sm text-dLink">infomasi protokoler & humas</p>
         </router-link>
         <div
-          class="flex flex-col justify-center items-center cursor-pointer w-80 h-80 mb-5 rounded-lg border-2 border-rBlue lg:w-1/4 lg:h-80 md:mr-5 hover:border-navy hover:shadow-md hover:-translate-y-3 duration-300"
+          class="flex flex-col justify-center items-center cursor-pointer w-80 h-80 mb-5 rounded-lg border-2 border-rBlue lg:w-1/4 lg:h-80 md:mr-5 md:ml-5 lg:mr-5 hover:border-navy hover:shadow-md hover:-translate-y-3 duration-300"
         >
           <img class="w-40" src="@/assets/img/rencana.svg" alt="" />
           <h1 class="text-xl text-center text-dBlue mt-3 font-semibold">

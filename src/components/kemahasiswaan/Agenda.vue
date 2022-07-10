@@ -40,7 +40,6 @@
             type="text"
             id="default-search"
             v-model="search"
-            @keyup="onPageChange"
             class="block p-4 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 lg:w-[25rem]"
             placeholder="Cari Agenda"
             required
@@ -128,7 +127,7 @@ export default {
 
   data() {
     return {
-      currentPage: "",
+      currentPage: 1,
       pagination: "",
       items: [],
       error: "",
@@ -137,13 +136,15 @@ export default {
     };
   },
 
-  created() {
+  mounted() {
     this.onPageChange();
   },
 
   methods: {
     onPageChange(page) {
-      // console.log(page);
+      if (page == undefined) {
+        page = 1;
+      }
       this.loading = true; //the loading begin
       axios
         .get("http://localhost:8000/api/blog?page=" + page + "&s=" + this.search)
@@ -156,6 +157,12 @@ export default {
           this.error = "Data Tidak Ditemukan!";
         })
         .finally(() => (this.loading = false)); // set loading to false when request finish
+    },
+  },
+
+  watch: {
+    search() {
+      this.onPageChange();
     },
   },
 };
