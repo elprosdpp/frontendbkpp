@@ -13,6 +13,10 @@
     <!-- End Header Panel -->
 
     <div class="border-b mb-5"></div>
+
+    <!-- Content Data Panduan Render -->
+    <router-view></router-view>
+    <!-- End Content Data Panduan Render -->
   </div>
 </template>
 

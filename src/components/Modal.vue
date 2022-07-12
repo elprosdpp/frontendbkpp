@@ -1,9 +1,6 @@
 <template>
   <transition name="slide-fade">
-    <div
-      id="mySidenav"
-      class="sidenav w-auto md:w-96 lg:w-[28rem] lg:animate__slideInRight"
-    >
+    <div id="mySidenav" class="sidenav w-auto md:w-96 lg:w-[28rem]">
       <div class="flex justify-between items-center p-5">
         <h1 class="font-bold text-dBlue">Detail Agenda</h1>
         <button class="hover:text-dBlue text-2xl font-bold" @click="close">

@@ -15,7 +15,7 @@ import Detail from '../views/berita/DetailBeritaView.vue';
 // Routes Group Kemahasiswaan
 import Kemahasiswaan from '../views/kemahasiswaan/WrapKemahasiswaanView.vue';
 import Agenda from '../views/kemahasiswaan/AgendaMahasiswaView.vue';
-import Organisasi from '../views/kemahasiswaan/OrganisasiMahasiswaView.vue';
+import Organisasi from '../views/kemahasiswaan/organisasiMahasiswa/OrganisasiMahasiswaView.vue';
 
 // ORGANISASI MAHASISWA GROUP
 import IntroOrmawaView from '../views/kemahasiswaan/organisasiMahasiswa/IntroOrmawaView.vue';
@@ -23,8 +23,14 @@ import DetailOrmawaView from '../views/kemahasiswaan/organisasiMahasiswa/DetailO
 // END ORGANISASI MAHASISWA GROUP
 
 import Prestasi from '../views/kemahasiswaan/PrestasiMahasiswaView.vue';
-import Panduan from '../views/kemahasiswaan/PanduanMahasiswaView.vue';
-import Karir from '../views/kemahasiswaan/PusatKarirView.vue';
+
+// PANDUAN MAHASISWA GROUP
+import Panduan from '../views/kemahasiswaan/panduanMahasiswa/PanduanMahasiswaView.vue';
+import ListPanduan from '../views/kemahasiswaan/panduanMahasiswa/ListPanduanView.vue'
+import DetailPanduan from '../views/kemahasiswaan/panduanMahasiswa/DetailPanduanView.vue'
+// END PANDUAN MAHASISWA GROUP
+
+import Karir from '../views/kemahasiswaan/pusatKarir/PusatKarirView.vue';
 import Bisnis from '../views/kemahasiswaan/PusatInkubatorBisnisView.vue';
 
 // Routes Group HumasPusatInkubatorBisnisView
@@ -63,7 +69,6 @@ const routes = [
       }
     ]
   },
-
   {
     path: '/berita',
     name: 'Berita',
@@ -115,10 +120,22 @@ const routes = [
         component: Prestasi
       },
       {
-        path: '/kemahasiswaan/panduanMahasiswa',
+        path: '/kemahasiswaan/panduanMahasiswa/',
         name: "PanduanMahasiswa",
         meta: { title: 'Panduan Kemahasiswaan - BKPPUNW' },
-        component: Panduan
+        component: Panduan,
+        children: [
+          {
+            path: '',
+            name: 'ListPanduanmMhasiswa.ListPanduan',
+            component: ListPanduan,
+          },
+          {
+            path: ':slug',
+            name: 'PanduanMahasiswa.DetailPanduan',
+            component: DetailPanduan,
+          },
+        ]
       },
       {
         path: '/kemahasiswaan/pusatKarir',

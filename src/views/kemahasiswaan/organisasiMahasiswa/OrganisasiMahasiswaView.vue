@@ -102,7 +102,7 @@ export default {
     toggleDropdown(e) {
       this.isOpen = !this.isOpen;
     },
-    
+
     close(e) {
       setTimeout(() => {
         this.isOpen = false;

@@ -165,7 +165,7 @@
                         to="/kemahasiswaan/prestasiMahasiswa"
                         :class="{
                           'router-link-active': isActive(
-                            '/kemahasiswaan/prestasiMahasiswa'
+                            '/kemahasiswaan/prestasiMahasiswa/'
                           ),
                         }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
@@ -177,7 +177,7 @@
                         to="/kemahasiswaan/panduanMahasiswa"
                         :class="{
                           'router-link-active': isActive(
-                            '/kemahasiswaan/panduanMahasiswa'
+                            '/kemahasiswaan/panduanMahasiswa/'
                           ),
                         }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
