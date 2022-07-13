@@ -112,4 +112,16 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+option {
+  background-color: #ffffff;
+}
+option:before {
+  content: ">";
+  font-size: 20px;
+  display: none;
+  padding-right: 10px;
+  padding-left: 5px;
+  color: #fff;
+}
+</style>

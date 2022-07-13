@@ -1,4 +1,5 @@
 import { vueRouter, createRouter, createWebHistory } from 'vue-router'
+import NProgress from 'nprogress';
 
 // Langsung Panggil Home View
 import HomeView from '../views/HomeView.vue';
@@ -30,7 +31,11 @@ import ListPanduan from '../views/kemahasiswaan/panduanMahasiswa/ListPanduanView
 import DetailPanduan from '../views/kemahasiswaan/panduanMahasiswa/DetailPanduanView.vue'
 // END PANDUAN MAHASISWA GROUP
 
+// GROUP PUSAT KARIR
 import Karir from '../views/kemahasiswaan/pusatKarir/PusatKarirView.vue';
+import MenuKarir from '../views/kemahasiswaan/pusatKarir/MenuPusatKarirView.vue';
+// GROUP PUSAT KARIR
+
 import Bisnis from '../views/kemahasiswaan/PusatInkubatorBisnisView.vue';
 
 // Routes Group HumasPusatInkubatorBisnisView
@@ -141,7 +146,14 @@ const routes = [
         path: '/kemahasiswaan/pusatKarir',
         name: "PusatKarir",
         meta: { title: 'Pusat Karir - BKPPUNW' },
-        component: Karir
+        component: Karir,
+        children: [
+          {
+            path: '',
+            name: 'MenuKarir',
+            component: MenuKarir,
+          },
+        ]
       },
       {
         path: '/kemahasiswaan/inkubatorBisnis',
@@ -192,6 +204,19 @@ const router = createRouter({
   // }
 })
 
+router.beforeResolve((to, from, next) => {
+  // If this isn't an initial page load.
+  if (to.name) {
+    // Start the route progress bar.
+    NProgress.start()
+  }
+  next()
+})
+
+router.afterEach(() => {
+  // Complete the animation of the route progress bar.
+  NProgress.done()
+})
 
 
 export default router
