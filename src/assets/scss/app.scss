@@ -1,0 +1,16 @@
+// SCSS variables
+$header-height: 0px;
+$progress-indicator-height: 5px;
+$vue-green: #4F46E5;
+
+// Progress Indicator
+.progress-indicator-wrapper {
+  position: fixed;
+  height: $progress-indicator-height;
+  width: 100%;
+  top: $header-height;
+  .progress-indicator {
+    height: $progress-indicator-height;
+    background: $vue-green;
+  }
+}

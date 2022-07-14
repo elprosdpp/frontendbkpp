@@ -1,4 +1,5 @@
 <template>
+  <Progress />
   <div id="top" class="flex items-center h-72 bg-gray-50 bg-waves bg-center bg-no-repeat">
     <div class="container w-1/2 mx-auto p-5 -mt-[5.5rem]">
       <p class="text-sm text-center mb-2">{{ berita.published }}</p>
@@ -34,9 +35,11 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import dataBerita from "@/views/berita/berita.json";
+import Progress from "@/components/ProgressScroll.vue";
 
 export default {
   name: "DetailBerita",
+  components: { Progress },
   setup() {
     const route = useRoute();
     const berita = computed(() => {
@@ -55,3 +58,6 @@ export default {
   },
 };
 </script>
+<style>
+@import "@/assets/scss/app.css";
+</style>

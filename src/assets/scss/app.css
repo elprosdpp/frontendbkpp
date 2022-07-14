@@ -1,0 +1,12 @@
+.progress-indicator-wrapper {
+  position: fixed;
+  height: 5px;
+  width: 100%;
+  top: 0px;
+}
+
+.progress-indicator-wrapper .progress-indicator {
+  height: 5px;
+  background: #4F46E5;
+}
+/*# sourceMappingURL=app.css.map */
