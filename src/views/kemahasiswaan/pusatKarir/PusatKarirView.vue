@@ -41,10 +41,10 @@
           v-show="isOpen"
           id="dropdown"
           class="z-50 block bg-white divide-y divide-gray-100 rounded shadow-md"
-          style="position: absolute; width: 13rem; transform: translate(2px, 11px)"
+          style="position: absolute; width: 13rem; transform: translate(-28px, 10px)"
         >
           <ul class="py-1 text-sm text-dLink font-semibold" v-if="isOpen">
-            <li v-for="item in items" :key="item.id">
+            <li v-for="item in dataItem" :key="item.id">
               <router-link
                 :to="item.link"
                 class="block uppercase px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
@@ -67,10 +67,49 @@
 <script>
 export default {
   name: "PusatKarir",
+  data() {
+    return {
+      isOpen: false,
+      dataItem: [
+        {
+          id: "1",
+          name: "Tracer Study",
+          link: "/kemahasiswaan/pusatKarir/tracerStudi",
+        },
+        {
+          id: "2",
+          name: "Info Lowongan Kerja",
+          link: "/kemahasiswaan/pusatKarir/infoLowonganKerja",
+        },
+        {
+          id: "3",
+          name: "Layanan konseling",
+          link: "/kemahasiswaan/pusatKarir/LayananKonseling",
+        },
+      ],
+    };
+  },
 
-  // setup() {
+  methods: {
+    toggleDropdown(e) {
+      this.isOpen = !this.isOpen;
+    },
 
-  // }
+    close(e) {
+      setTimeout(() => {
+        this.isOpen = false;
+      }, 200);
+    },
+  },
+
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to, from) {
+        document.title = to.meta.title || "BKPP UNW";
+      },
+    },
+  },
 };
 </script>
 

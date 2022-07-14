@@ -33,7 +33,9 @@ import DetailPanduan from '../views/kemahasiswaan/panduanMahasiswa/DetailPanduan
 
 // GROUP PUSAT KARIR
 import Karir from '../views/kemahasiswaan/pusatKarir/PusatKarirView.vue';
-import MenuKarir from '../views/kemahasiswaan/pusatKarir/MenuPusatKarirView.vue';
+import Tracer from '../views/kemahasiswaan/pusatKarir/TracerStudyView.vue';
+import InfoKerja from '../views/kemahasiswaan/pusatKarir/InfoLowonganKerjaView.vue';
+import layananKonseling from '../views/kemahasiswaan/pusatKarir/LayananKonselingView.vue';
 // GROUP PUSAT KARIR
 
 import Bisnis from '../views/kemahasiswaan/PusatInkubatorBisnisView.vue';
@@ -145,13 +147,28 @@ const routes = [
       {
         path: '/kemahasiswaan/pusatKarir',
         name: "PusatKarir",
-        meta: { title: 'Pusat Karir - BKPPUNW' },
+        redirect: {
+          path: '/kemahasiswaan/pusatKarir/tracerStudi'
+        },
         component: Karir,
         children: [
           {
-            path: '',
-            name: 'MenuKarir',
-            component: MenuKarir,
+            path: '/kemahasiswaan/pusatKarir/tracerStudi',
+            name: 'Tracer Study',
+            component: Tracer,
+            meta: { title: 'Tracer Study - BKPPUNW' },
+          },
+          {
+            path: '/kemahasiswaan/pusatKarir/InfoLowonganKerja',
+            name: 'Info Lowongan Kerja',
+            component: InfoKerja,
+            meta: { title: 'Info Lowongan Kerja - BKPPUNW' },
+          },
+          {
+            path: '/kemahasiswaan/pusatKarir/layananKonseling',
+            name: 'Layanan Konseling',
+            component: layananKonseling,
+            meta: { title: 'Layanan Konseling - BKPPUNW' },
           },
         ]
       },
