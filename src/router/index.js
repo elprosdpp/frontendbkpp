@@ -38,7 +38,7 @@ import InfoKerja from '../views/kemahasiswaan/pusatKarir/InfoLowonganKerjaView.v
 import layananKonseling from '../views/kemahasiswaan/pusatKarir/LayananKonselingView.vue';
 // GROUP PUSAT KARIR
 
-import Bisnis from '../views/kemahasiswaan/PusatInkubatorBisnisView.vue';
+import Bisnis from '../views/kemahasiswaan/pusatInkubator/PusatInkubatorBisnisView.vue';
 
 // Routes Group HumasPusatInkubatorBisnisView
 import Humas from '../views/humas/WrapHumasView.vue';

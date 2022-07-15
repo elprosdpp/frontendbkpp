@@ -4,7 +4,7 @@
     <template v-slot:title>
       <span
         class="font-semibold text-xl"
-        :class="{ 'router-link-active': subIsActive('/agendaKehumasan') }"
+        :class="{ 'router-link-active': isActive('/humas/agendaKehumasan') }"
         >{{ group.names }}</span
       >
     </template>
@@ -53,7 +53,18 @@ export default {
         "GROUP B": {
           names: "GROUP B",
           open: false,
-          items: ["item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7"],
+          items: [
+            {
+              name: "Halaman Keprotokoleran",
+              link: "/humas/keprotokoleran",
+              icon: "fa-solid fa-list-check",
+            },
+            {
+              name: "Agenda Kehumasan",
+              link: "/humas/agendaKehumasan",
+              icon: "fa-solid fa-list-check",
+            },
+          ],
         },
       },
     };
@@ -68,6 +79,10 @@ export default {
         console.log(paths);
         return uri; // current path starts with this path string
       });
+    },
+    isActive(path) {
+      const rout = this.$route.path === path;
+      return rout;
     },
   },
 };
