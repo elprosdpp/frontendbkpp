@@ -13,6 +13,7 @@
     "nprogress": "^0.2.0",
     "swiper": "^8.2.4",
     "vue": "^3.2.13",
+    "vue-easy-lightbox": "^1.5.0",
     "vue-router": "^4.0.3",
     "vue3-carousel": "^0.1.40"
   },
