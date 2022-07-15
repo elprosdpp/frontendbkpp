@@ -1,12 +1,11 @@
 <template>
-  <div class="container grid grid-rows-4 grid-flow-row gap-2">
-    <div
-      v-for="(img, index) in imgs"
-      :key="index"
-      class="w-full object-cover"
-      @click="() => showImg(index)"
-    >
-      <img :src="typeof img === 'string' ? img : img.src" />
+  <h1 class="font-bold text-2xl uppercase mb-5">info Lowongan Kerja</h1>
+  <div class="gap-8 columns-3">
+    <div v-for="(img, index) in imgs" :key="index" @click="() => showImg(index)">
+      <img
+        :src="typeof img === 'string' ? img : img.src"
+        class="w-full aspect-square mb-6 object-cover"
+      />
     </div>
     <vue-easy-lightbox
       scrollDisabled
@@ -31,7 +30,7 @@ export default {
     return {
       imgs: [
         "https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
-        "https://via.placeholder.com/450.png/",
+        "https://images.unsplash.com/photo-1657881170074-78cbae6d79ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80",
         "https://via.placeholder.com/450.png/",
         "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         {
