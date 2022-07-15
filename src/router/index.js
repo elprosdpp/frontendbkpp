@@ -38,9 +38,13 @@ import InfoKerja from '../views/kemahasiswaan/pusatKarir/InfoLowonganKerjaView.v
 import layananKonseling from '../views/kemahasiswaan/pusatKarir/LayananKonselingView.vue';
 // GROUP PUSAT KARIR
 
+// GROUP PUSAT INKUBATOR BISNIS
 import Bisnis from '../views/kemahasiswaan/pusatInkubator/PusatInkubatorBisnisView.vue';
+import StrukturInkubator from '../views/kemahasiswaan/pusatInkubator/StrukturPusatInkubatorView.vue';
+import KegiatanBidang from '../views/kemahasiswaan/pusatInkubator/KegiatanBidangView.vue';
+// END GROUP PUSAT INKUBATOR BISNIS
 
-// Routes Group HumasPusatInkubatorBisnisView
+// Routes Group Humas
 import Humas from '../views/humas/WrapHumasView.vue';
 import AgendaHumas from '../views/humas/AgendaKehumasanView.vue';
 import Keprotokoleran from '../views/humas/KeprotokoleranView.vue';
@@ -176,7 +180,24 @@ const routes = [
         path: '/kemahasiswaan/inkubatorBisnis',
         name: "InkubatorBisnis",
         meta: { title: 'Pusat Inkubator Bisnis - BKPPUNW' },
-        component: Bisnis
+        redirect: {
+          path: '/kemahasiswaan/pusatKarir/StrukturOrganisasi',
+        },
+        component: Bisnis,
+        children: [
+          {
+            path: '/kemahasiswaan/pusatKarir/StrukturOrganisasi',
+            name: 'Struktur Organsasi Pusat Inkubator Bisnis',
+            component: StrukturInkubator,
+            meta: { title: 'Struktur Organsasi Pusat Inkubator Bisnis - BKPPUNW' },
+          },
+          {
+            path: '/kemahasiswaan/pusatKarir/KegiatanBidang',
+            name: 'Kegiatan Bidang',
+            component: KegiatanBidang,
+            meta: { title: 'Kegiatan Bidang - BKPPUNW' },
+          },
+        ]
       },
     ]
   },
