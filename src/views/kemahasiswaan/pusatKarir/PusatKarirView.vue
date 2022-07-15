@@ -5,7 +5,7 @@
     <!-- Header Panel -->
     <div class="flex flex-wrap justify-between items-center pb-5">
       <div>
-        <h1 class="text-xl text-dBlue font-bold">Pusat Karir</h1>
+        <h1 class="text-xl text-dBlue font-bold">{{ this.$route.name }}</h1>
         <p class="text-sm">Memuat Semua Komponen Pusat Karir</p>
       </div>
       <div class="">
