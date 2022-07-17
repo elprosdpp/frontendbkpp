@@ -41,7 +41,9 @@ import layananKonseling from '../views/kemahasiswaan/pusatKarir/LayananKonseling
 // GROUP PUSAT INKUBATOR BISNIS
 import Bisnis from '../views/kemahasiswaan/pusatInkubator/PusatInkubatorBisnisView.vue';
 import StrukturInkubator from '../views/kemahasiswaan/pusatInkubator/StrukturPusatInkubatorView.vue';
-import KegiatanBidang from '../views/kemahasiswaan/pusatInkubator/KegiatanBidangView.vue';
+import KegiatanBidang from '../views/kemahasiswaan/pusatInkubator/kegiatanBidang/KegiatanBidangView.vue';
+import ListKegiatanBidang from '../views/kemahasiswaan/pusatInkubator/kegiatanBidang/ListKegiatanBidangView.vue';
+import DetailKegiatanBidang from '../views/kemahasiswaan/pusatInkubator/kegiatanBidang/DetailKegiatanBidangView.vue';
 // END GROUP PUSAT INKUBATOR BISNIS
 
 // Routes Group Humas
@@ -192,10 +194,22 @@ const routes = [
             meta: { title: 'Struktur Organsasi Pusat Inkubator Bisnis - BKPPUNW' },
           },
           {
-            path: '/kemahasiswaan/pusatKarir/KegiatanBidang',
+            path: '/kemahasiswaan/pusatKarir/KegiatanBidang/',
             name: 'Kegiatan Bidang',
             component: KegiatanBidang,
             meta: { title: 'Kegiatan Bidang - BKPPUNW' },
+            children: [
+              {
+                path: '',
+                name: 'List Kegiatan Bidang',
+                component: ListKegiatanBidang,
+              },
+              {
+                path: ':slug',
+                name: 'Detail Kegiatan Bidang',
+                component: DetailKegiatanBidang,
+              },
+            ]
           },
         ]
       },

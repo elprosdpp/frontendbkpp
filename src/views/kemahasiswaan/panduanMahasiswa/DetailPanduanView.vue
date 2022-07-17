@@ -28,9 +28,10 @@
 // Get Data API
 let url = "http://localhost:8000/api/panduan/";
 
-import { toRefs, onMounted, reactive } from "vue";
+import { toRefs, onMounted, reactive, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
+
 export default {
   name: "DetailPanduan",
 
@@ -56,6 +57,14 @@ export default {
 
     onMounted(() => {
       getData();
+    });
+
+    watchEffect(() => {
+      if (state.items.name) {
+        document.title = `${state.items.name} - BKAPP UNW`;
+      } else {
+        document.title = route.meta.title;
+      }
     });
 
     return { ...toRefs(state), getData };
