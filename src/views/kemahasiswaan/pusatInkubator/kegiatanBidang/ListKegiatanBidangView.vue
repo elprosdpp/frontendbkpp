@@ -1,6 +1,5 @@
 <template>
-  <!-- <h1 class="mb-10">List Kegiatan Bidang</h1> -->
-
+  <!-- Pagination & Search -->
   <div class="flex flex-wrap justify-between items-center pb-5">
     <div class="w-1/2">
       <label
@@ -48,6 +47,7 @@
     Entries
   </span>
 
+  <!-- Content -->
   <div class="flex justify-between flex-wrap mb-5 mt-5">
     <div
       v-for="item in items"
@@ -76,7 +76,7 @@
           name: 'Detail Kegiatan',
           params: { id: item.id },
         }"
-        class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Detail
       </router-link>
@@ -110,7 +110,6 @@ export default {
 
     const getData = (pages = 1) => {
       // state.loading = true;
-      // let _page = route.query.page || 1;
       axios
         .get(url + "?page=" + pages + "&s=" + state.search)
         .then((response) => {

@@ -18,31 +18,34 @@
     Back
   </router-link>
   <div class="py-5"></div>
-  <div class="container mx-auto p-5 -mt-[5.5rem]">
-    <p class="text-sm text-center mb-2">Published : {{ Tanggal(items.created_at) }}</p>
-    <h1 class="text-2xl text-center font-bold text-dBlue uppercase">
-      {{ items.title }}
-    </h1>
-  </div>
-  <div class="flex justify-center">
-    <img
-      :src="items.image"
-      :alt="items.title"
-      style="width: 1920px; height: 500px; object-fit: cover"
-    />
-  </div>
-  <div class="description text-justify px-[2rem] py-10">
-    <p class="text-lg">
-      {{ items.description }}
-    </p>
+  <loading v-if="loading"></loading>
+  <div v-else class="animate__animated animate__fadeIn">
+    <div class="container mx-auto p-4 -mt-5">
+      <p class="text-sm text-center mb-2">Published : {{ Tanggal(items.created_at) }}</p>
+      <h1 class="text-4xl text-center font-bold text-dBlue uppercase">
+        {{ items.title }}
+      </h1>
+    </div>
+    <div class="flex justify-center">
+      <img
+        :src="items.image"
+        :alt="items.title"
+        style="width: 1920px; height: 500px; object-fit: cover"
+      />
+    </div>
+    <div class="description text-justify px-[2rem] py-10">
+      <p class="text-lg">
+        {{ items.description }}
+      </p>
 
-    <hr class="my-10" />
-    <button
-      type="button"
-      class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-    >
-      {{ items.category }}
-    </button>
+      <hr class="my-10" />
+      <button
+        type="button"
+        class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      >
+        {{ items.category }}
+      </button>
+    </div>
   </div>
 </template>
 
@@ -53,11 +56,13 @@ let url = "http://localhost:8000/api/blog/";
 import { toRefs, onMounted, reactive, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
+import Loading from "./LoadingDetailView.vue";
 // import moment from "moment";
 import moment from "moment/min/moment-with-locales";
 
 export default {
   name: "DetailKegiatanBidang",
+  components: { Loading },
 
   setup() {
     const route = useRoute();
@@ -89,7 +94,7 @@ export default {
     });
 
     watchEffect(() => {
-      if (state.items.name) {
+      if (state.items.title) {
         document.title = `${state.items.title} - BKAPP UNW`;
       } else {
         document.title = route.meta.title;
