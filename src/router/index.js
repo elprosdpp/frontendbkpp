@@ -200,9 +200,16 @@ const routes = [
             meta: { title: 'Kegiatan Bidang - BKPPUNW' },
             children: [
               {
-                path: '',
+                path: '/kemahasiswaan/pusatKarir/KegiatanBidang/',
                 name: 'List Kegiatan Bidang',
                 component: ListKegiatanBidang,
+                children: [
+                  {
+                    path: ':page',
+                    name: 'pagelist',
+                    component: ListKegiatanBidang,
+                  }
+                ]
               },
               {
                 path: ':slug',
