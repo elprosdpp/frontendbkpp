@@ -203,13 +203,6 @@ const routes = [
                 path: '/kemahasiswaan/pusatKarir/KegiatanBidang/',
                 name: 'List Kegiatan Bidang',
                 component: ListKegiatanBidang,
-                // children: [
-                //   {
-                //     path: ':slug',
-                //     name: 'DetailKegiatan',
-                //     component: DetailKegiatanBidang,
-                //   }
-                // ]
               },
               {
                 path: ':id',

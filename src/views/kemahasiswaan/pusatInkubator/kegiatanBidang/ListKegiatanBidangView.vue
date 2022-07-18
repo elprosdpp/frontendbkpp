@@ -57,7 +57,9 @@
       <!-- tanggal upload content/agenda -->
       <div class="flex justify-between mb-3">
         <p class="font-bold uppercase text-link text-sm">{{ item.category }}</p>
-        <p cla ss="font-bold uppercase text-link text-sm">Rabu, 29 Juni 2022</p>
+        <p cla ss="font-bold uppercase text-link text-sm">
+          {{ Tanggal(item.created_at) }}
+        </p>
       </div>
       <!-- end tanggal upload content/agenda -->
       <!-- <a href="#"> -->
@@ -85,6 +87,7 @@
 <script>
 import { toRefs, onMounted, reactive, watchEffect } from "vue";
 // import { useRoute } from "vue-router";
+import moment from "moment/min/moment-with-locales";
 import axios from "axios";
 
 // Get Data API
@@ -120,6 +123,11 @@ export default {
         .catch((error) => console.log(error));
     };
 
+    const Tanggal = (date) => {
+      moment.locale("id");
+      return moment(date, "YYYYMMDD").fromNow();
+    };
+
     onMounted(() => {
       getData();
     });
@@ -131,6 +139,7 @@ export default {
     return {
       ...toRefs(state),
       getData,
+      Tanggal,
     };
   },
 };
