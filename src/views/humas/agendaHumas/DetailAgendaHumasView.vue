@@ -4,7 +4,7 @@
 
     <!-- Header Panel -->
     <div class="flex flex-wrap justify-between items-center pb-5">
-      <Header judul="Agenda Kehumasan" caption="Memuat Semua Komponen Agenda Kehumasan" />
+      <Header :judul="items.title" caption="Detail Agenda Kehumasan" />
       <router-link
         to="/humas/agendaKehumasan"
         class="inline-flex items-center py-2 px-4 mr-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
