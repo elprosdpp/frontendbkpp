@@ -4,7 +4,7 @@
       class="h-5 mx-auto mb-5 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[540px]"
     ></div>
     <div
-      class="h-8 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[640px] mb-7 mx-auto"
+      class="h-8 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[640px] mb-6 mx-auto"
     ></div>
     <div
       class="flex justify-center items-center mb-5 w-full h-80 bg-gray-300 rounded dark:bg-gray-700"
@@ -25,10 +25,10 @@
       class="h-5 mx-auto mb-5 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[768px]"
     ></div>
     <div
-      class="h-5 mx-10 mb-5 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[640px]"
+      class="h-5 mx-auto mb-5 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[768px]"
     ></div>
     <div
-      class="h-5 mx-10 mb-5 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[480px]"
+      class="h-5 mx-auto mb-5 bg-gray-300 rounded-md dark:bg-gray-700 max-w-[768px]"
     ></div>
     <span class="sr-only">Loading...</span>
   </div>
