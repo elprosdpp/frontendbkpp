@@ -14,9 +14,7 @@
       <!-- End Sidebar -->
 
       <!-- Content -->
-      <div
-        class="w-96 p-3 h-auto border-2 border-rBlue rounded-lg md:w-10/12 lg:w-10/11 lg:mx-5"
-      >
+      <div class="w-[23rem] h-auto md:w-10/12 lg:w-10/11 lg:mx-5">
         <router-view></router-view>
       </div>
       <!-- End Content -->

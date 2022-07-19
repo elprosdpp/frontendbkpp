@@ -30,6 +30,7 @@
       <img
         :src="items.image"
         :alt="items.title"
+        class="rounded-md"
         style="width: 1920px; height: 500px; object-fit: cover"
       />
     </div>

@@ -46,11 +46,14 @@ import ListKegiatanBidang from '../views/kemahasiswaan/pusatInkubator/kegiatanBi
 import DetailKegiatanBidang from '../views/kemahasiswaan/pusatInkubator/kegiatanBidang/DetailKegiatanBidangView.vue';
 // END GROUP PUSAT INKUBATOR BISNIS
 
-// Routes Group Humas
+// GROUP HUMAS
 import Humas from '../views/humas/WrapHumasView.vue';
-import AgendaHumas from '../views/humas/AgendaKehumasanView.vue';
+import AgendaHumas from '../views/humas/agendaHumas/AgendaKehumasanView.vue';
+import DetailAgenda from '../views/humas/agendaHumas/DetailAgendaHumasView.vue';
+import WrapAgenda from '../views/humas/agendaHumas/WrapAgendaHumasView.vue';
 import Keprotokoleran from '../views/humas/KeprotokoleranView.vue';
 import PublikasiMedia from '../views/humas/PublikasiMediaView.vue';
+// END GROUP HUMAS
 
 
 const routes = [
@@ -226,7 +229,19 @@ const routes = [
         path: '/humas/agendaKehumasan',
         name: "AgendaKehumasan",
         meta: { title: 'Agenda Kehumasan - BKPPUNW' },
-        component: AgendaHumas
+        component: WrapAgenda,
+        children: [
+          {
+            path: '/humas/agendaKehumasan',
+            name: 'Agenda Kehumasan',
+            component: AgendaHumas,
+          },
+          {
+            path: ':slug',
+            name: 'Detail Agenda Humas',
+            component: DetailAgenda,
+          }
+        ],
       },
       {
         path: '/humas/keprotokoleran',
