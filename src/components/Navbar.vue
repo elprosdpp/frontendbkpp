@@ -63,8 +63,7 @@
             </router-link> -->
             <button
               type="button"
-              @click.prevent="toggleDropdown"
-              @blur="close"
+              @mouseenter="isOpen = true"
               :class="{ 'router-link-active': subIsActive(['/kemahasiswaan', '/humas']) }"
               class="relative block py-10 px-3 lg:text-base text-link hover:text-hover font-semibold"
             >
@@ -74,6 +73,7 @@
             <div
               class="mega-menu mb-16 sm:mb-0 shadow-xl bg-white border-t border-[#E5E5E5]"
               v-show="isOpen"
+              @mouseleave="isOpen = false"
             >
               <div class="container mx-auto p-5 text-link mb-8">
                 <!-- Head Megamenu -->
@@ -112,8 +112,8 @@
                         <input
                           type="search"
                           id="default-search"
-                          class="block p-4 pl-10 w-96 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          placeholder="Search Resource..."
+                          class="block p-4 pl-10 w-[21rem] mt-3 lg:w-96 lg:mt-0 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          placeholder="Cari"
                           required
                         />
                         <button
@@ -130,7 +130,42 @@
                 <!-- End Head Megamenu -->
 
                 <!-- Main Megamenu -->
-                <div class="pt-4 flex flex-wrap">
+                <div class="hoverable pt-4 flex flex-wrap" @click="isOpen = !isOpen">
+                  <ul
+                    class="w-full sm:w-1/2 lg:w-1/4 md:hidden lg:hidden border-gray-600 pb-6 pt-6 lg:pt-3"
+                  >
+                    <h3 class="font-bold text-md text-dBlue text-bold mb-2">Umum</h3>
+                    <li>
+                      <router-link
+                        to="/"
+                        :class="{
+                          'router-link-active': isActive('/'),
+                        }"
+                        class="block p-3 hover:text-hover hover:font-bold text-link"
+                        >Beranda</router-link
+                      >
+                    </li>
+                    <li>
+                      <router-link
+                        to="/profil"
+                        :class="{
+                          'router-link-active': isActive(['/profil']),
+                        }"
+                        class="block p-3 hover:text-hover hover:font-bold text-link"
+                        >Profil</router-link
+                      >
+                    </li>
+                    <li>
+                      <router-link
+                        to="/berita"
+                        :class="{
+                          'router-link-active': isActive('/berita'),
+                        }"
+                        class="block p-3 hover:text-hover hover:font-bold text-link"
+                        >Berita
+                      </router-link>
+                    </li>
+                  </ul>
                   <ul class="w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
                     <h3 class="font-bold text-md text-dBlue text-bold mb-2">
                       Kemahasiswaan
@@ -325,7 +360,6 @@
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-0"
                   @click.prevent="toggleDropdown"
-                  @blur="close"
                 >
                   <span class="text-dBlue font-bold">Umum</span>
                   <svg
@@ -388,7 +422,6 @@
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-1"
                   @click.prevent="toggleDropdown"
-                  @blur="close"
                 >
                   <span class="text-dBlue font-bold">Kemahasiswaan</span>
                   <svg
@@ -691,9 +724,9 @@ export default {
       return rout;
     },
 
-    toggleDropdown(e) {
-      this.isOpen = !this.isOpen;
-    },
+    // toggleDropdown(e) {
+    //   this.isOpen = !this.isOpen;
+    // },
 
     close(e) {
       setTimeout(() => {
