@@ -13,7 +13,7 @@
       <div
         v-for="item in items"
         :key="item.id"
-        class="w-full lg:w-[49%] rounded-lg border border-gray-200 bg-white"
+        class="w-full mb-3 lg:w-[49%] rounded-lg border border-gray-200 bg-white"
       >
         <div class="text-right p-4">
           <span class="text-xs text-gray-500 tracking-widest uppercase">Dokumen</span>
