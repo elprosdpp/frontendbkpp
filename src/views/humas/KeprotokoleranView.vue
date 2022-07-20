@@ -46,7 +46,7 @@
           </p>
           <button
             type="button"
-            @click="downloadWithAxios(item.file, item.name)"
+            @click="downloadWithAxios(item.file, item.slug)"
             class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm mt-4 px-4 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             <svg
@@ -63,6 +63,7 @@
                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
               ></path>
             </svg>
+
             Download
           </button>
         </div>
@@ -74,7 +75,7 @@
 <script>
 // Inisialisasi
 import Header from "@/components/HeaderView.vue";
-import { toRefs, onMounted, reactive } from "vue";
+import { toRefs, onMounted, reactive, ref } from "vue";
 import axios from "axios";
 // Get Data API
 let url = "http://localhost:8000/api/protokoler";
@@ -101,18 +102,28 @@ export default {
     };
 
     const downloadWithAxios = (url, name) => {
-      axios({
-        url: `http://localhost:8000/api/protokoler/${url}`, // File URL Goes Here
-        method: "GET",
-        responseType: "blob",
-      }).then((res) => {
-        var FILE = window.URL.createObjectURL(new Blob([res.data]));
-        var docUrl = document.createElement("a");
-        docUrl.href = FILE;
-        docUrl.setAttribute("download", name);
-        document.body.appendChild(docUrl);
-        docUrl.click();
-      });
+      // key != key ? (state.loading = true) : "";
+      axios(
+        {
+          url: "http://localhost:8000/api/protokoler/" + url, //your url
+          method: "GET",
+          responseType: "blob", // important
+        },
+        {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        }
+      )
+        .then((response) => {
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", `${name}.pdf`); //or any other extension
+          document.body.appendChild(link);
+          link.click();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
 
     onMounted(() => {
