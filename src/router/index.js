@@ -56,8 +56,12 @@ import PublikasiMedia from '../views/humas/PublikasiMediaView.vue';
 // END GROUP HUMAS
 
 // ROUTE GROUP PERENCAAN PENGEMBANGAN
-import WrapRencana from '../views/rencanaPengembangan/WrapRencanaPengembanganView.vue'
-import Renstra from '../views/rencanaPengembangan/RenstraUniversitasView.vue'
+import WrapRencana from '../views/rencanaPengembangan/WrapRencanaPengembanganView.vue';
+import Renstra from '../views/rencanaPengembangan/RenstraUniversitasView.vue';
+import RencanaKerja from '../views/rencanaPengembangan/RencanaKerjaView.vue';
+import MonevKegiatan from '../views/rencanaPengembangan/MonevKegiatanAnggaranView.vue';
+import Legalitas from '../views/rencanaPengembangan/LegalitasView.vue';
+import Sidoakre from '../views/rencanaPengembangan/SidoakreView.vue';
 // END ROUTE GROUP PERENCANAAN PENGEMBANGAN
 
 
@@ -274,6 +278,30 @@ const routes = [
         name: 'Renstra Universitas',
         component: Renstra,
         meta: { title: 'Renstra Universitas - BKAPP' },
+      },
+      {
+        path: '/rencanaPengembangan/rencanaKerja',
+        name: 'Rencana Kerja',
+        component: RencanaKerja,
+        meta: { title: 'Rencana Kerja Universitas - BKAPP' },
+      },
+      {
+        path: '/rencanaPengembangan/monevKegiatan',
+        name: 'Monev Kegiatan & Anggaran',
+        component: MonevKegiatan,
+        meta: { title: 'Monev Kegiatan & Anggaran - BKAPP' },
+      },
+      {
+        path: '/rencanaPengembangan/legalitas',
+        name: 'Legalitas PT & PS',
+        component: Legalitas,
+        meta: { title: 'Legalitas PT & PS - BKAPP' },
+      },
+      {
+        path: '/rencanaPengembangan/sidoakre',
+        name: 'SIDOAKRE',
+        component: Sidoakre,
+        meta: { title: 'SIDOAKRE - BKAPP' },
       },
     ]
   }

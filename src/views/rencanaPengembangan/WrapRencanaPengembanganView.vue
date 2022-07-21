@@ -39,20 +39,20 @@ export default {
       dataItem: [
         {
           id: "1",
-          name: "Resntra Universitas",
+          name: "Renstra Universitas",
           link: "/rencanaPengembangan/renstraUniversitas",
           icon: "fa-solid fa-file",
         },
         {
           id: "2",
-          name: "Rencana Kerja UNW",
+          name: "Rencana Kerja Universitas",
           link: "/rencanaPengembangan/rencanaKerja",
           icon: "fa-solid fa-list",
         },
         {
           id: "3",
           name: "Monev Kegiatan & Anggaran",
-          link: "/rencanaPengembangan/monevKegiatanAnggaran",
+          link: "/rencanaPengembangan/monevKegiatan",
           icon: "fa-solid fa-list-check",
         },
         {

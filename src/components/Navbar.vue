@@ -296,32 +296,50 @@
                       >Renstra Universitas
                     </router-link>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/rencanaPengembangan/rencanaKerja"
+                        :class="{
+                          'router-link-active': isActive(
+                            '/rencanaPengembangan/rencanaKerja'
+                          ),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Rencana Kerja UNW</a
-                      >
+                        >Rencana Kerja
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/rencanaPengembangan/monevKegiatan"
+                        :class="{
+                          'router-link-active': isActive(
+                            '/rencanaPengembangan/monevKegiatan'
+                          ),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Monev Kegiatan & Anggaran</a
-                      >
+                        >Monev Kegiatan & Anggaran
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/rencanaPengembangan/legalitas"
+                        :class="{
+                          'router-link-active': isActive(
+                            '/rencanaPengembangan/legalitas'
+                          ),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Legalitas PT & PS</a
-                      >
+                        >Legalitas PT & PS
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/rencanaPengembangan/sidoakre"
+                        :class="{
+                          'router-link-active': isActive('/rencanaPengembangan/sidoakre'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >SIDOAKRE</a
-                      >
+                        >SIDOAKRE
+                      </router-link>
                     </li>
                   </ul>
                   <ul class="w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">

@@ -5,8 +5,8 @@
     <!-- Header Panel -->
     <div class="flex flex-wrap justify-between items-center pb-5">
       <Header
-        judul="Renstra Universitas"
-        caption="Memuat Semua Dokumen Renstra Universitas"
+        judul="Legalitas PT & PS"
+        caption="Memuat Semua Dokumen Legalitas PT & PS"
       />
     </div>
 
@@ -81,10 +81,10 @@ import Header from "@/components/HeaderView.vue";
 import { toRefs, onMounted, reactive, ref } from "vue";
 import axios from "axios";
 // Get Data API
-let url = "http://localhost:8000/api/renstra";
+let url = "http://localhost:8000/api/legalitas";
 
 export default {
-  name: "ResntraUniversitas",
+  name: "RencanaKerja",
   components: { Header },
 
   setup() {
@@ -108,7 +108,7 @@ export default {
       // key != key ? (state.loading = true) : "";
       axios(
         {
-          url: "http://localhost:8000/api/renstra/" + url, //your url
+          url: "http://localhost:8000/api/legalitas/" + url, //your url
           method: "GET",
           responseType: "blob", // important
         },
