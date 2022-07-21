@@ -67,11 +67,12 @@
           />
         </div>
       </div>
-      <div>
+      <div class="mb-3 md:mb-3 lg:md-0">
         <label
           for="default-search"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-          >Passoword Dokumen</label
+          :class="errMsg ? 'text-red-700' : ''"
+          >Password Dokumen</label
         >
         <div class="relative">
           <form action="#">
@@ -80,6 +81,7 @@
             >
               <svg
                 class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                :class="errMsg ? 'w-5 h-5 text-red-900' : ''"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -98,12 +100,16 @@
               name="password"
               autocomplete="on"
               v-model="pass"
+              :class="errMsg ? 'border-red-500 text-red-900 placeholder-red-700' : ''"
               class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 lg:w-[25rem]"
               placeholder="Password Dokumen"
               required
             />
           </form>
         </div>
+        <p v-if="errMsg" class="mt-2 text-sm text-red-600 dark:text-red-500">
+          Password Dokumen <span class="font-bold">{{ errMsg }}</span> Salah!
+        </p>
       </div>
     </div>
 
@@ -147,7 +153,7 @@
           </p>
           <button
             type="button"
-            @click="downloadWithAxios(item.file, item.slug, item.id)"
+            @click="downloadWithAxios(item.file, item.slug, item.id, item.name)"
             class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm mt-4 px-4 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             <svg
@@ -196,6 +202,7 @@ export default {
       disabled: null,
       loading: false,
       pass: "",
+      errMsg: "",
     });
 
     const getData = (pages = 1) => {
@@ -212,7 +219,7 @@ export default {
         .catch((error) => console.log(error));
     };
 
-    const downloadWithAxios = (url, name, id) => {
+    const downloadWithAxios = (url, slug, id, name) => {
       if (state.pass == id) {
         // key != key ? (state.loading = true) : "";
         axios(
@@ -229,13 +236,16 @@ export default {
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement("a");
             link.href = url;
-            link.setAttribute("download", `${name}.pdf`); //or any other extension
+            link.setAttribute("download", `${slug}.pdf`); //or any other extension
             document.body.appendChild(link);
             link.click();
           })
           .catch((error) => {
             console.log(error);
           });
+      } else {
+        state.errMsg = name;
+        setTimeout(() => (state.errMsg = ""), 5000);
       }
     };
 
