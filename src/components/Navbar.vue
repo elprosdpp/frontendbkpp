@@ -69,6 +69,7 @@
                   '/kemahasiswaan',
                   '/humas',
                   '/rencanaPengembangan',
+                  '/download',
                 ]),
               }"
               class="relative block py-10 px-3 lg:text-base text-link hover:text-hover font-semibold"
@@ -345,11 +346,14 @@
                   <ul class="w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
                     <h3 class="font-bold text-md text-dBlue text-bold mb-2">Download</h3>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/download/undangUndang"
+                        :class="{
+                          'router-link-active': isActive('/download/undangUndang'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Undang-Undang</a
-                      >
+                        >Undang-Undang
+                      </router-link>
                     </li>
                     <li>
                       <a

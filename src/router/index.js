@@ -64,6 +64,11 @@ import Legalitas from '../views/rencanaPengembangan/LegalitasView.vue';
 import Sidoakre from '../views/rencanaPengembangan/SidoakreView.vue';
 // END ROUTE GROUP PERENCANAAN PENGEMBANGAN
 
+// ROUTE GROUP DOWNLOAD
+import WrapDownload from '../views/download/WrapDownloadView.vue';
+import Undang from '../views/download/UndangView.vue';
+// END ROUTE GROUP DOWNLOAD
+
 
 const routes = [
   {
@@ -302,6 +307,21 @@ const routes = [
         name: 'SIDOAKRE',
         component: Sidoakre,
         meta: { title: 'SIDOAKRE - BKAPP' },
+      },
+    ]
+  },
+  {
+    path: '/download',
+    redirect: {
+      path: '/download/undangUndang'
+    },
+    component: WrapDownload,
+    children: [
+      {
+        path: '/download/undangUndang',
+        name: 'Undang-Undang',
+        component: Undang,
+        meta: { title: 'Undang-Undang - BKAPP' },
       },
     ]
   }
