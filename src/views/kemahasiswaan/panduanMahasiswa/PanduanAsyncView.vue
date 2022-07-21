@@ -32,7 +32,7 @@
     <div class="px-8 pb-4">
       <h2 class="text-gray-800 text-xl font-bold">{{ item.name }}</h2>
       <p class="text-gray-600 text-xs">
-        {{ item.description.substring(0, 40) + ".." }}
+        {{ item.description.substring(0, 100) + ".." }}
       </p>
     </div>
   </router-link>

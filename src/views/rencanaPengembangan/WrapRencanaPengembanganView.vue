@@ -1,7 +1,10 @@
 <template>
   <div class="">
     <!-- Panel Header -->
-    <PanelHeader judul="Kemahasiswaan" caption="Memuat Semua Menu Kemahasiswan" />
+    <PanelHeader
+      judul="Perencanaan Pengembangan"
+      caption="Memuat Semua Menu Perencanaan Pengembangan"
+    />
 
     <!-- Panel Content -->
     <div class="container mx-auto py-20">
@@ -9,7 +12,7 @@
         <!-- Sidebar -->
         <Sidebar
           :items="dataItem"
-          header="Kemahasiswaan"
+          header="Perencanaan Pengembangan"
           :width="['Sidebar', 'w-96 mb-5 md:w-10/12 lg:w-1/3']"
         />
         <!-- End Sidebar -->
@@ -36,39 +39,33 @@ export default {
       dataItem: [
         {
           id: "1",
-          name: "Agenda Kemahasiswaan",
-          link: "/kemahasiswaan/agendaMahasiswa",
-          icon: "fa-solid fa-list-check",
+          name: "Resntra Universitas",
+          link: "/rencanaPengembangan/renstraUniversitas",
+          icon: "fa-solid fa-file",
         },
         {
           id: "2",
-          name: "Organisasi Kemahasiswaan",
-          link: "/kemahasiswaan/organisasiMahasiswa",
-          icon: "fa-solid fa-sitemap",
+          name: "Rencana Kerja UNW",
+          link: "/rencanaPengembangan/rencanaKerja",
+          icon: "fa-solid fa-list",
         },
         {
           id: "3",
-          name: "Prestasi Kemahasiswaan",
-          link: "/kemahasiswaan/prestasiMahasiswa",
-          icon: "fa-solid fa-trophy",
+          name: "Monev Kegiatan & Anggaran",
+          link: "/rencanaPengembangan/monevKegiatanAnggaran",
+          icon: "fa-solid fa-list-check",
         },
         {
           id: "4",
-          name: "Panduan Kemahasiswaan",
-          link: "/kemahasiswaan/panduanMahasiswa",
-          icon: "fa-solid fa-book",
+          name: "Legalitas PT & PS",
+          link: "/rencanaPengembangan/legalitas",
+          icon: "fa-solid fa-file",
         },
         {
           id: "5",
-          name: "Pusat Karir",
-          link: "/kemahasiswaan/pusatKarir",
+          name: "SIDOAKRE",
+          link: "/rencanaPengembangan/sidoakre",
           icon: "fa-solid fa-up-right-from-square",
-        },
-        {
-          id: "6",
-          name: "Pusat Inkubator Bisnis",
-          link: "/kemahasiswaan/inkubatorBisnis",
-          icon: "fa-solid fa-database",
         },
       ],
     };

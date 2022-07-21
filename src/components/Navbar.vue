@@ -64,7 +64,13 @@
             <button
               type="button"
               @mouseenter="isOpen = true"
-              :class="{ 'router-link-active': subIsActive(['/kemahasiswaan', '/humas']) }"
+              :class="{
+                'router-link-active': subIsActive([
+                  '/kemahasiswaan',
+                  '/humas',
+                  '/rencanaPengembangan',
+                ]),
+              }"
               class="relative block py-10 px-3 lg:text-base text-link hover:text-hover font-semibold"
             >
               BKAPP
@@ -279,13 +285,16 @@
                     <h3 class="font-bold text-md text-dBlue text-bold mb-2">
                       Perencanaan Pengembangan
                     </h3>
-                    <li>
-                      <a
-                        href="#"
-                        class="block p-3 text-link hover:text-hover hover:font-bold"
-                        >Renstra Universitas</a
-                      >
-                    </li>
+                    <router-link
+                      to="/rencanaPengembangan/renstraUniversitas"
+                      :class="{
+                        'router-link-active': isActive(
+                          '/rencanaPengembangan/renstraUniversitas'
+                        ),
+                      }"
+                      class="block p-3 hover:text-hover hover:font-bold text-link"
+                      >Renstra Universitas
+                    </router-link>
                     <li>
                       <a
                         href="#"

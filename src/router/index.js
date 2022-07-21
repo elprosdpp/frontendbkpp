@@ -55,13 +55,18 @@ import Keprotokoleran from '../views/humas/KeprotokoleranView.vue';
 import PublikasiMedia from '../views/humas/PublikasiMediaView.vue';
 // END GROUP HUMAS
 
+// ROUTE GROUP PERENCAAN PENGEMBANGAN
+import WrapRencana from '../views/rencanaPengembangan/WrapRencanaPengembanganView.vue'
+import Renstra from '../views/rencanaPengembangan/RenstraUniversitasView.vue'
+// END ROUTE GROUP PERENCANAAN PENGEMBANGAN
+
 
 const routes = [
   {
     path: '/',
     name: 'Beranda',
     component: HomeView,
-    meta: { title: 'Beranda - BKPPUNW' },
+    meta: { title: 'Beranda - BKAPP' },
   },
 
   {
@@ -74,13 +79,13 @@ const routes = [
       {
         path: 'struktur',
         name: "struktur",
-        meta: { title: 'Struktur BKAPP - BKPPUNW' },
+        meta: { title: 'Struktur BKAPP - BKAPP' },
         component: Struktur
       },
       {
         path: 'tupoksi',
         name: "tupoksi-bidang",
-        meta: { title: 'Tupoksi Bidang - BKPPUNW' },
+        meta: { title: 'Tupoksi Bidang - BKAPP' },
         component: Tupoksi
       }
     ]
@@ -89,7 +94,7 @@ const routes = [
     path: '/berita',
     name: 'Berita',
     component: Berita,
-    meta: { title: 'Berita - BKPPUNW' },
+    meta: { title: 'Berita - BKAPP' },
     children: [
     ]
   },
@@ -108,13 +113,13 @@ const routes = [
       {
         path: '/kemahasiswaan/agendaMahasiswa',
         name: "AgendaMahasiswa",
-        meta: { title: 'Agenda Kemahasiswaan - BKPPUNW' },
+        meta: { title: 'Agenda Kemahasiswaan - BKAPP' },
         component: Agenda
       },
       {
         path: '/kemahasiswaan/organisasiMahasiswa/',
         name: "OrganisasiMahasiswa",
-        meta: { title: 'Organisasi Kemahasiswaan - BKPPUNW' },
+        meta: { title: 'Organisasi Kemahasiswaan - BKAPP' },
         component: Organisasi,
         children: [
           {
@@ -132,13 +137,13 @@ const routes = [
       {
         path: '/kemahasiswaan/prestasiMahasiswa',
         name: "PrestasiMahasiswa",
-        meta: { title: 'Prestasi Kemahasiswaan - BKPPUNW' },
+        meta: { title: 'Prestasi Kemahasiswaan - BKAPP' },
         component: Prestasi
       },
       {
         path: '/kemahasiswaan/panduanMahasiswa/',
         name: "PanduanMahasiswa",
-        meta: { title: 'Panduan Kemahasiswaan - BKPPUNW' },
+        meta: { title: 'Panduan Kemahasiswaan - BKAPP' },
         component: Panduan,
         children: [
           {
@@ -165,26 +170,26 @@ const routes = [
             path: '/kemahasiswaan/pusatKarir/tracerStudi',
             name: 'Tracer Study',
             component: Tracer,
-            meta: { title: 'Tracer Study - BKPPUNW' },
+            meta: { title: 'Tracer Study - BKAPP' },
           },
           {
             path: '/kemahasiswaan/pusatKarir/InfoLowonganKerja',
             name: 'Info Lowongan Kerja',
             component: InfoKerja,
-            meta: { title: 'Info Lowongan Kerja - BKPPUNW' },
+            meta: { title: 'Info Lowongan Kerja - BKAPP' },
           },
           {
             path: '/kemahasiswaan/pusatKarir/layananKonseling',
             name: 'Layanan Konseling',
             component: layananKonseling,
-            meta: { title: 'Layanan Konseling - BKPPUNW' },
+            meta: { title: 'Layanan Konseling - BKAPP' },
           },
         ]
       },
       {
         path: '/kemahasiswaan/inkubatorBisnis',
         name: "InkubatorBisnis",
-        meta: { title: 'Pusat Inkubator Bisnis - BKPPUNW' },
+        meta: { title: 'Pusat Inkubator Bisnis - BKAPP' },
         redirect: {
           path: '/kemahasiswaan/pusatKarir/StrukturOrganisasi',
         },
@@ -194,13 +199,13 @@ const routes = [
             path: '/kemahasiswaan/pusatKarir/StrukturOrganisasi',
             name: 'Struktur Organsasi Pusat Inkubator Bisnis',
             component: StrukturInkubator,
-            meta: { title: 'Struktur Organsasi Pusat Inkubator Bisnis - BKPPUNW' },
+            meta: { title: 'Struktur Organsasi Pusat Inkubator Bisnis - BKAPP' },
           },
           {
             path: '/kemahasiswaan/pusatKarir/KegiatanBidang/',
             name: 'Kegiatan Bidang',
             component: KegiatanBidang,
-            meta: { title: 'Kegiatan Bidang - BKPPUNW' },
+            meta: { title: 'Kegiatan Bidang - BKAPP' },
             children: [
               {
                 path: '/kemahasiswaan/pusatKarir/KegiatanBidang/',
@@ -228,7 +233,7 @@ const routes = [
       {
         path: '/humas/agendaKehumasan',
         name: "AgendaKehumasan",
-        meta: { title: 'Agenda Kehumasan - BKPPUNW' },
+        meta: { title: 'Agenda Kehumasan - BKAPP' },
         component: WrapAgenda,
         children: [
           {
@@ -246,14 +251,29 @@ const routes = [
       {
         path: '/humas/keprotokoleran',
         name: "Keprotokoleran",
-        meta: { title: 'Keprotokoleran - BKPPUNW' },
+        meta: { title: 'Keprotokoleran - BKAPP' },
         component: Keprotokoleran
       },
       {
         path: '/humas/publikasiMedia',
         name: "Publikasi Media",
-        meta: { title: 'Publikasi Media - BKPPUNW' },
+        meta: { title: 'Publikasi Media - BKAPP' },
         component: PublikasiMedia
+      },
+    ]
+  },
+  {
+    path: '/rencanaPengembangan',
+    redirect: {
+      path: '/rencanaPengembangan/renstraUniversitas'
+    },
+    component: WrapRencana,
+    children: [
+      {
+        path: '/rencanaPengembangan/renstraUniversitas',
+        name: 'Renstra Universitas',
+        component: Renstra,
+        meta: { title: 'Renstra Universitas - BKAPP' },
       },
     ]
   }
