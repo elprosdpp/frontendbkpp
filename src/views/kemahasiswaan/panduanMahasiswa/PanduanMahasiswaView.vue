@@ -8,7 +8,6 @@
         <h1 class="text-xl text-dBlue font-bold">Panduan Kemahasiswaan</h1>
         <p class="text-sm">Memuat Semua Komponen Panduan Kemahasiswaan</p>
       </div>
-      <div class=""></div>
     </div>
     <!-- End Header Panel -->
 
