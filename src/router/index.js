@@ -67,6 +67,8 @@ import Sidoakre from '../views/rencanaPengembangan/SidoakreView.vue';
 // ROUTE GROUP DOWNLOAD
 import WrapDownload from '../views/download/WrapDownloadView.vue';
 import Undang from '../views/download/UndangView.vue';
+import Peraturan from '../views/download/PeraturanView.vue';
+import Edaran from '../views/download/SuratEdaranView.vue';
 // END ROUTE GROUP DOWNLOAD
 
 
@@ -322,6 +324,18 @@ const routes = [
         name: 'Undang-Undang',
         component: Undang,
         meta: { title: 'Undang-Undang - BKAPP' },
+      },
+      {
+        path: '/download/peraturanPeraturan',
+        name: 'Peraturan-Peraturan',
+        component: Peraturan,
+        meta: { title: 'Peraturan-Peraturan - BKAPP' },
+      },
+      {
+        path: '/download/suratEdaran',
+        name: 'Surat Edaran',
+        component: Edaran,
+        meta: { title: 'Surat Edaran - BKAPP' },
       },
     ]
   }

@@ -5,8 +5,8 @@
     <!-- Header Panel -->
     <div class="flex flex-wrap justify-between items-center pb-5">
       <Header
-        judul="Renstra Universitas"
-        caption="Memuat Semua Dokumen Renstra Universitas"
+        judul="Peraturan-Peraturan"
+        caption="Memuat Semua Dokumen Peraturan-Peraturan"
       />
     </div>
 
@@ -180,10 +180,10 @@ import PageSimple from "@/components/SimplePagination.vue";
 import { toRefs, onMounted, reactive, watchEffect } from "vue";
 import axios from "axios";
 // Get Data API
-let url = "http://localhost:8000/api/renstra";
+let url = "http://localhost:8000/api/raker";
 
 export default {
-  name: "ResntraUniversitas",
+  name: "RencanaKerja",
   components: { Header, PageSimple },
 
   setup() {
@@ -213,11 +213,11 @@ export default {
     };
 
     const downloadWithAxios = (url, name, id) => {
-      // key != key ? (state.loading = true) : "";
       if (state.pass == id) {
+        // key != key ? (state.loading = true) : "";
         axios(
           {
-            url: "http://localhost:8000/api/renstra/" + url, //your url
+            url: "http://localhost:8000/api/raker/" + url, //your url
             method: "GET",
             responseType: "blob", // important
           },

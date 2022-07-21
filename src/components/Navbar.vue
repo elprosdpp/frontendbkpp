@@ -356,18 +356,24 @@
                       </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/download/peraturanPeraturan"
+                        :class="{
+                          'router-link-active': isActive('/download/peraturanPeraturan'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Peraturan-Preaturan</a
-                      >
+                        >Peraturan-Peraturan
+                      </router-link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <router-link
+                        to="/download/suratEdaran"
+                        :class="{
+                          'router-link-active': isActive('/download/suratEdaran'),
+                        }"
                         class="block p-3 hover:text-hover hover:font-bold text-link"
-                        >Surat Edaran</a
-                      >
+                        >Surat Edaran
+                      </router-link>
                     </li>
                   </ul>
                 </div>

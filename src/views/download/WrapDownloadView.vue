@@ -43,7 +43,7 @@ export default {
         {
           id: "2",
           name: "Peraturan-Peraturan",
-          link: "/download/rencanaKerja",
+          link: "/download/peraturanPeraturan",
           icon: "fa-solid fa-book",
         },
         {
