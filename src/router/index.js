@@ -251,7 +251,7 @@ const routes = [
       },
       {
         path: '/humas/publikasiMedia',
-        name: "PublikasiMedai",
+        name: "Publikasi Media",
         meta: { title: 'Publikasi Media - BKPPUNW' },
         component: PublikasiMedia
       },
