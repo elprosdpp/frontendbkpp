@@ -354,6 +354,7 @@ const router = createRouter({
 })
 
 router.beforeResolve((to, from, next) => {
+  document.title = to.meta.title
   // If this isn't an initial page load.
   if (to.name) {
     // Start the route progress bar.

@@ -59,7 +59,7 @@ import { useRoute } from "vue-router";
 import axios from "axios";
 import Loading from "./LoadingDetailView.vue";
 // import moment from "moment";
-import moment from "moment/min/moment-with-locales";
+import moment from "moment";
 
 export default {
   name: "DetailKegiatanBidang",

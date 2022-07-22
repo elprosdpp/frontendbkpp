@@ -75,7 +75,7 @@ import axios from "axios";
 import Loading from "@/components/LoadingDetail.vue";
 
 // import moment from "moment";
-import moment from "moment/min/moment-with-locales";
+import moment from "moment";
 
 export default {
   name: "DetailKegiatanHumas",

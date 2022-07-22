@@ -6,9 +6,8 @@
   <section class="">
     <div class="container mx-auto py-20">
       <!-- Search -->
-      <div class="flex flex-wrap justify-end items-center pb-10 pr-0 lg:pr-[43px]">
-        <div class="mr-5"><h1>Search :</h1></div>
-        <div>
+      <div class="flex flex-wrap justify-between items-center pb-10 pr-0 lg:mx-[43px]">
+        <div class="flex">
           <label
             for="default-search"
             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -34,21 +33,36 @@
               </svg>
             </div>
             <input
-              type="text"
+              type="search"
               v-model="search"
               id="default-search"
               class="block p-4 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 lg:w-[25rem]"
               placeholder="Cari Berita"
               required
             />
-            <button
-              type="submit"
-              class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Cari
-            </button>
           </div>
         </div>
+        <div>
+          <page-simple
+            :pages="pages"
+            :lastPage="lastPage"
+            :disabled="disabled"
+            @changepage="getData"
+          />
+        </div>
+      </div>
+      <div class="mx-[43px]">
+        <span class="text-sm text-gray-700 dark:text-gray-400">
+          Showing
+          <span class="font-semibold text-gray-900 dark:text-white">{{ meta.from }}</span>
+          to
+          <span class="font-semibold text-gray-900 dark:text-white">{{ meta.to }}</span>
+          of
+          <span class="font-semibold text-gray-900 dark:text-white">{{
+            meta.total
+          }}</span>
+          Entries
+        </span>
       </div>
       <!-- Search -->
 
@@ -57,14 +71,11 @@
         <div
           v-for="b in items"
           :key="b.id"
-          class="w-80 mb-5 bg-white rounded-lg border-2 border-rBlue shadow-sm cursor-pointer md:mx-3 md:w-96 lg:w-96 hover:border-navy hover:shadow-md hover:-translate-y-3 duration-300"
+          class="w-80 h-[30rem] mb-5 bg-white rounded-lg border-2 border-rBlue shadow-sm cursor-pointer md:mx-3 md:w-96 lg:w-96 hover:border-navy hover:shadow-md hover:-translate-y-3 duration-300"
         >
-          <router-link
-            :to="{ name: 'detailberita', params: { slug: b.slug } }"
-            @click="scrollToTop"
-          >
+          <router-link :to="{ name: 'detailberita', params: { slug: b.slug } }">
             <img
-              :src="b.img"
+              :src="b.image"
               :alt="b.title"
               class="p-3 w-full h-64 object-cover rounded-[1.2rem]"
             />
@@ -85,7 +96,7 @@
               <!-- End Category -->
 
               <!-- Time Upload Left -->
-              <p class="text-xs">● 4 min ago</p>
+              <p class="text-xs">● {{ Tanggal(b.created_at) }}</p>
               <!-- End Time Upload Left -->
             </div>
             <router-link :to="{ name: 'detailberita', params: { slug: b.slug } }">
@@ -114,40 +125,64 @@
 </template>
 
 <script>
+// Inisialisasi
+import Header from "@/components/HeaderView.vue";
+import PageSimple from "@/components/SimplePagination.vue";
+import { toRefs, onMounted, reactive, watchEffect, defineAsyncComponent } from "vue";
+import axios from "axios";
 import PanelHeader from "@/components/Panel.vue";
-import dataBerita from "@/views/berita/berita.json";
+import moment from "moment";
+
+// Get Data API
+let url = "http://localhost:8000/api/news";
 
 export default {
   name: "BeritaView",
-  components: { PanelHeader },
-  data() {
-    return {
-      dataItem: dataBerita,
+  components: { Header, PanelHeader, PageSimple },
+
+  setup() {
+    const state = reactive({
+      items: [],
+      lastPage: 1,
+      pages: 1,
+      meta: "",
       search: "",
+      disabled: null,
+      loading: false,
+    });
+
+    const getData = (pages = 1) => {
+      state.loading = true;
+      axios
+        .get(url + "?page=" + pages + "&s=" + state.search)
+        .then((response) => {
+          state.items = response.data.data;
+          state.meta = response.data.meta;
+          state.pages = response.data.meta.current_page;
+          state.lastPage = response.data.meta.last_page;
+          state.loading = false;
+        })
+        .catch((error) => console.log(error));
     };
-  },
 
-  computed: {
-    items() {
-      return this.dataItem.filter((b) =>
-        b.title.toLowerCase().includes(this.search.toLowerCase())
-      );
-    },
-  },
+    const Tanggal = (date) => {
+      moment.locale("id");
+      return moment(date).startOf("hour").fromNow();
+    };
 
-  methods: {
-    scrollToTop() {
-      window.scrollTo(0, 0);
-    },
-  },
+    onMounted(() => {
+      getData();
+    });
 
-  watch: {
-    $route: {
-      immediate: true,
-      handler(to, from) {
-        document.title = to.meta.title || "BKPP UNW";
-      },
-    },
+    watchEffect(() => {
+      getData();
+    });
+
+    return {
+      ...toRefs(state),
+      getData,
+      Tanggal,
+    };
   },
 };
 </script>
