@@ -5,31 +5,7 @@
     <!-- Header Panel -->
     <div class="flex flex-wrap justify-between items-center pb-5">
       <Header judul="Surat Edaran" caption="Memuat Semua Dokumen Surat Edaran" />
-    </div>
-
-    <div class="border-b mb-5"></div>
-
-    <!-- Pagination & Meta Helper -->
-    <div class="flex flex-wrap justify-between items-center mb-3 md:mb-3 lg:md-0">
-      <span class="text-sm text-gray-700 dark:text-gray-400">
-        Showing
-        <span class="font-semibold text-gray-900 dark:text-white">{{ meta.from }}</span>
-        to
-        <span class="font-semibold text-gray-900 dark:text-white">{{ meta.to }}</span> of
-        <span class="font-semibold text-gray-900 dark:text-white">{{ meta.total }}</span>
-        Entries
-      </span>
-      <PageSimple
-        :pages="pages"
-        :lastPage="lastPage"
-        :disabled="disabled"
-        @changepage="getData"
-      />
-    </div>
-
-    <!-- Search & Password Dokumen -->
-    <div class="flex flex-wrap justify-between items-center">
-      <div class="mb-3 md:mb-3 lg:md-0">
+      <div>
         <label
           for="default-search"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
@@ -64,50 +40,26 @@
           />
         </div>
       </div>
-      <div class="mb-3 md:mb-3 lg:md-0">
-        <label
-          for="default-search"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-          :class="errMsg ? 'text-red-700' : ''"
-          >Password Dokumen</label
-        >
-        <div class="relative">
-          <form action="#">
-            <div
-              class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
-            >
-              <svg
-                class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                :class="errMsg ? 'w-5 h-5 text-red-900' : ''"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                ></path>
-              </svg>
-            </div>
-            <input
-              type="password"
-              name="password"
-              autocomplete="on"
-              v-model="pass"
-              :class="errMsg ? 'border-red-500 text-red-900 placeholder-red-700' : ''"
-              class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 lg:w-[25rem]"
-              placeholder="Password Dokumen"
-              required
-            />
-          </form>
-        </div>
-        <p v-if="errMsg" class="mt-2 text-sm text-red-600 dark:text-red-500">
-          Password Dokumen <span class="font-bold">{{ errMsg }}</span> Salah!
-        </p>
-      </div>
+    </div>
+
+    <div class="border-b mb-5"></div>
+
+    <!-- Pagination & Meta Helper -->
+    <div class="flex flex-wrap justify-between items-center mb-3 md:mb-3 lg:md-0">
+      <span class="text-sm text-gray-700 dark:text-gray-400">
+        Showing
+        <span class="font-semibold text-gray-900 dark:text-white">{{ meta.from }}</span>
+        to
+        <span class="font-semibold text-gray-900 dark:text-white">{{ meta.to }}</span> of
+        <span class="font-semibold text-gray-900 dark:text-white">{{ meta.total }}</span>
+        Entries
+      </span>
+      <PageSimple
+        :pages="pages"
+        :lastPage="lastPage"
+        :disabled="disabled"
+        @changepage="getData"
+      />
     </div>
 
     <div class="border-b mt-5 mb-5"></div>
@@ -150,7 +102,7 @@
           </p>
           <button
             type="button"
-            @click="downloadWithAxios(item.file, item.slug, item.id, item.name)"
+            @click="downloadWithAxios(item.file, item.slug)"
             class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm mt-4 px-4 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             <svg
@@ -186,7 +138,7 @@ import axios from "axios";
 let url = "http://localhost:8000/api/raker";
 
 export default {
-  name: "RencanaKerja",
+  name: "SuratEdaran",
   components: { Header, PageSimple },
 
   setup() {
@@ -198,7 +150,6 @@ export default {
       search: "",
       disabled: null,
       loading: false,
-      pass: "",
       errMsg: "",
     });
 
@@ -216,34 +167,28 @@ export default {
         .catch((error) => console.log(error));
     };
 
-    const downloadWithAxios = (url, slug, id, name) => {
-      if (state.pass == id) {
-        // key != key ? (state.loading = true) : "";
-        axios(
-          {
-            url: "http://localhost:8000/api/raker/" + url, //your url
-            method: "GET",
-            responseType: "blob", // important
-          },
-          {
-            headers: { "Access-Control-Allow-Origin": "*" },
-          }
-        )
-          .then((response) => {
-            const url = window.URL.createObjectURL(new Blob([response.data]));
-            const link = document.createElement("a");
-            link.href = url;
-            link.setAttribute("download", `${slug}.pdf`); //or any other extension
-            document.body.appendChild(link);
-            link.click();
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      } else {
-        state.errMsg = name;
-        setTimeout(() => (state.errMsg = ""), 5000);
-      }
+    const downloadWithAxios = (url, slug) => {
+      axios(
+        {
+          url: "http://localhost:8000/api/raker/" + url, //your url
+          method: "GET",
+          responseType: "blob", // important
+        },
+        {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        }
+      )
+        .then((response) => {
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", `${slug}.pdf`); //or any other extension
+          document.body.appendChild(link);
+          link.click();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
 
     onMounted(() => {

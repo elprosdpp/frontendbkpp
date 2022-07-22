@@ -63,6 +63,7 @@
     </div>
 
     <!-- Loading Data -->
+    <div class="border-b mt-5 mb-5"></div>
     <div v-if="loading" class="flex justify-center">
       <svg
         role="status"

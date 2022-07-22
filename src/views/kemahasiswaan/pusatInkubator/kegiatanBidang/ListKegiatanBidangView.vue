@@ -47,6 +47,8 @@
     Entries
   </span>
 
+  <div class="border-b mt-5 mb-5"></div>
+
   <!-- Loading Data -->
   <div v-if="loading" class="flex justify-center">
     <svg
